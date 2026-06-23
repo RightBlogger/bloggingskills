@@ -1,0 +1,7 @@
+{
+  "name": "blogging-skills",
+  "description": "Agent skills that write blog content that ranks and doesn't read like AI.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "keywords": ["blogging", "content", "seo", "writing", "humanize", "ai-seo", "claude", "codex"]
+}

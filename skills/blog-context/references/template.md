@@ -13,18 +13,36 @@ Replace the bracketed prompts.
 - URL: [https://...]
 - Niche: [the one domain this blog owns, e.g. "home coffee brewing"]
 - Goal: [what the blog is for, e.g. "rank for buying-intent queries and drive trials"]
+- Other channels: [YouTube channel, newsletter, podcast URLs]
 
 ## Audience
 - Who: [the reader in one line, e.g. "home baristas, beginner to intermediate"]
 - Level: [beginner / practitioner / expert]
 - Problems they arrive with: [the questions or pains that bring them here]
 - Words they use: [the terms the reader actually uses, not industry jargon]
+- Where they look for answers: [Google, ChatGPT or other AI assistants, YouTube,
+  Reddit, newsletters]
 
 ## Pillars
 The 3 to 6 topic clusters this blog owns. New posts should ladder up to one.
 - [pillar 1]
 - [pillar 2]
 - [pillar 3]
+
+## Authors
+- [Name]: [role, credentials, hands-on background, e.g. "ran a cafe for 8 years"]
+- Bio or author page URL: [https://...]
+
+## Experience and proof
+Real material the writing skills may cite. They cite nothing that isn't here or in
+the request, so list what you actually have.
+- Products or tools used first-hand: [e.g. "Breville Bambino, daily since 2023"]
+- Tests and results: [e.g. "brewed 40 batches comparing grind sizes, notes in /data"]
+- Original data: [surveys, internal numbers you're willing to publish]
+- Stories and examples: [customer cases, mistakes made, lessons learned]
+- Media on hand: [photos, screenshots, videos and where they live]
+- Stances: [opinions the author holds and will defend, e.g. "pre-ground coffee is
+  fine for drip"]
 
 ## Voice
 - Tone: [conversational / editorial / technical]
@@ -39,8 +57,10 @@ The 3 to 6 topic clusters this blog owns. New posts should ladder up to one.
 
 ## CMS and tools
 - CMS: [WordPress / Ghost / Webflow / other]
-- Data sources available: [Search Console, analytics, a keyword tool, a knowledge base]
+- Data sources the agent can reach: [Search Console, analytics, a keyword tool, a SERP
+  or scraping tool, a sitemap URL, a knowledge base]
 
 ## Constraints
 - Off-limits: [topics, claims, or competitors to avoid]
 - Required: [disclaimers, legal lines, a standard CTA]
+- AI disclosure: [whether and how posts disclose AI assistance]

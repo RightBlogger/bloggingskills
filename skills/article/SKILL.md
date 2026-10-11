@@ -1,108 +1,129 @@
 ---
 name: article
-description: "When the user wants to write a complete, publish-ready blog post or article from a topic or keyword. Also use when the user says 'write a blog post', 'write an article about X', 'draft a post on', 'I need a 2000-word article', 'turn this keyword into a post', or gives a topic and a target length. This is the flagship that runs the full pipeline: research, outline, draft, humanize, optimize. For a video transcript instead of a topic, see youtube-to-blog. For optimizing a draft that already exists, see seo-optimize. For only humanizing existing text, see humanize."
+description: "When the user wants to write a complete, publish-ready blog post or article from a topic or keyword. Also use when the user says 'write a blog post', 'write an article about X', 'draft a post on', 'I need a 2000-word article', 'turn this keyword into a post', or gives a topic and a target length. This is the flagship that runs the full pipeline: research, outline, draft, humanize, optimize. For a video transcript instead of a topic, see youtube-to-blog. For optimizing a draft that already exists, see seo-optimize. For updating an old post, see refresh. For only humanizing existing text, see humanize."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Article
 
-You write a full blog post that ranks and reads like a human wrote it. You are the
-conductor of the pipeline. You don't dump a draft in one pass. You move through
-research, outline, section-by-section drafting, a humanize pass, and a light
-optimize pass, in that order.
+You write a full blog post that ranks, gets quoted by AI answer engines, and reads
+like a person wrote it. You conduct the pipeline in order: research, outline,
+section-by-section drafting, a humanize pass, and a light optimize pass. One-shot
+drafts repeat themselves and drift off the reader's question, which is why the
+order matters.
+
+The post is done when it answers the reader's question better than what already
+ranks, lands within the length target, passes the rulebook's self-check, and makes
+no claim you can't trace to a source, the user, or `.agents/blog-context.md`.
 
 ## Initial assessment
 
-1. Read `.agents/blog-context.md` for niche, audience, pillars, and voice. If it
-   doesn't exist, ask the three essentials inline (audience, goal, voice) or suggest
-   running blog-context first.
+1. Read `.agents/blog-context.md` for niche, audience, pillars, voice, and the
+   "Experience and proof" section (real data, cases, and credentials you may cite).
+   If it doesn't exist, don't stop to interview the user. Assume a general reader,
+   an informative goal, and a plain conversational voice, say so in your notes, and
+   suggest blog-context for next time.
 2. Read the house-style rulebook at `../house-style/references/ai-tells.md`. If that
    path doesn't resolve because the skill was installed alone, read the bundled copy
-   at `references/ai-tells.md`. The non-negotiables are summarized below; that file
-   is the full contract.
-3. Confirm the target: primary keyword, length tier, and angle.
+   at `references/ai-tells.md`. It is the full writing contract; this file doesn't
+   repeat it.
+3. Settle the target: primary keyword, length, and angle. Infer what the user didn't
+   state and keep going. Ask first only when two readings would produce different
+   posts (for example, "Python" the language or the snake).
 
-## Length tiers (target word counts)
+## Length
 
-micro ~500 · short ~1,000 · medium ~1,500 · long ~2,500 · very-long ~3,500.
+Tiers: micro ~500 · short ~1,000 · medium ~1,500 · long ~2,500 · very-long ~3,500.
 
-Pick the target from the user's explicit word count if they gave one; otherwise map
-their adjective (short, medium, long) to the tier above. If a stated number conflicts
-with a tier label, for example "a short 700-word post," the explicit number wins and
-becomes the target. Hold the final draft within roughly 90 to 105% of that target,
-and trim before returning. Models overwrite by default.
+An explicit word count wins over a tier label ("a short 700-word post" means 700).
+With no length given, pick the tier serp-analysis recommends, or medium. Land within
+90 to 105% of the target, counting the post with its headings and without the notes. Models overwrite by default, so trim before returning,
+cutting repetition and filler first and specifics last.
 
 ## The pipeline
 
-### 1. Research (skip if the user gave an outline)
+### 1. Research
 
-Get the primary keyword and five to fifteen related terms (use keyword-research). If
-you can read the SERP, note what the top results cover and where the gap is (use
-serp-analysis). Pull the three to five questions real readers ask. This feeds the
-outline. Don't dump it into the post. If keyword-research, serp-analysis, or web
-tools aren't connected, don't skip this step and don't fabricate a SERP or invent
-volumes: infer the related terms and reader questions from your own knowledge of the
-topic, treat the content-gap as best-effort, and state nothing in the post you
-couldn't support.
+Skip this if the user gave an outline. Otherwise get the primary keyword, five to
+fifteen related terms, and the three to five questions real readers ask
+(keyword-research). If you can read the live results, find what the top pages cover
+and where they're weak (serp-analysis). This feeds the outline; it doesn't get
+pasted into the post.
 
-### 2. Outline (see [references/outline.md](references/outline.md))
+With no keyword or web tools connected, infer the terms and questions from what you
+know, treat the gap as best effort, and never present invented volumes or rankings
+as data.
 
-Build an intent-driven outline: intro, H2 sections (with H3s where a section is
-dense), an optional FAQ, and a conclusion. The number of H2s scales with length
-(short 2 to 3, medium 4, long 5, very-long 6+). Put the primary keyword or a natural
-variant in at least one heading; spread related terms across other headings.
-Headings describe what the reader learns, never generic, never keyword-stuffed.
-Offer the user a checkpoint here if they want one.
+### 2. Outline
 
-### 3. Draft, section by section (see [references/sections.md](references/sections.md))
+Follow [references/outline.md](references/outline.md): an intro, H2 sections with H3s
+where a section is dense, an optional FAQ, and a conclusion. Headings say what the
+reader learns. Plan where the post's information gain comes from: the original
+example, number, comparison, or opinion that the ranking pages lack. If the user
+asked for a checkpoint, stop here and show the outline.
 
-Write each section in order, holding the running draft in mind so you never repeat a
-point already made. Aim for 200 to 350 words under each H2, and run shorter on micro
-and short posts so the whole piece stays in range. The total word budget beats the
-per-section floor; never pad a section to hit a number.
-Treat the keyword as a concept, not a fixed string: inflect and reorder it so every
-mention reads as natural prose. Intro and conclusion follow their own rules in
-sections.md. Add a FAQ only if it fits the topic.
+### 3. Draft section by section
+
+Follow [references/sections.md](references/sections.md). Write sections in order and
+hold the running draft in mind so no point repeats. Open each section with its
+answer, then support it. Treat the keyword as a concept: inflect and reorder it so
+every mention reads as natural prose.
+
+Use first-hand experience, data, and examples only from the user, the context file,
+or a source you can name. Where a real detail would make a section stronger and you
+don't have one, write the section without it and list the spot in your notes. A
+plausible invented anecdote is worse than none.
 
 ### 4. Humanize
 
-Before finishing, run ai-tells.md's "Quick self-check before shipping" against the
-draft. Search literally for em dashes, "serves as," "it's not," "here's the,"
-bold-colon bullets, and the question-then-fragment-answer pattern ("Want X? Do Y.");
-cap that last one at one per post. Read every three consecutive sentences for
-repeated openings. For a deeper rewrite, hand off to the humanize skill. This pass is
-not optional; it's what separates this from generic AI output.
+Run the rulebook's "Quick self-check before shipping" on the full draft and fix what
+it finds. Pay extra attention to the question-then-fragment pattern ("Want X? Do
+Y."), which long drafts accumulate; keep it to one per post. For a heavy rewrite,
+apply the humanize skill's method.
 
 ### 5. Optimize (light)
 
-Add internal links if the user has a site (internal-links). Generate the meta title
-and description (meta). Don't keyword-stuff, and never mention SEO in the output.
+If the user has a site and a list of real URLs or a links tool, add internal links
+(internal-links). Write the meta title, description, and slug (meta). Never mention
+SEO, keywords, or strategy in the post itself.
 
-## Non-negotiable rules (full set in house-style)
+## Format rules this skill adds
 
-- No em dashes in prose. No horizontal rules. No bold-colon bullets.
-- Short paragraphs (1–3 sentences, under 150 words). Prose over lists.
-- Vary sentence openings; never start three or more in a row with the same word.
-- Use contractions. Reading level around 8th grade.
-- No banned title, intro, or conclusion patterns (see ai-tells.md).
-- The first line of the article is the H1: `# Title`. No meta-commentary anywhere;
-  every line is reader-facing copy. Never print word counts.
+The rulebook covers style. These are specific to a finished post:
 
-## Images and embeds
-
-Add images only where they help a section, never a hero by default. Use real
-markdown image syntax with descriptive alt text; for stock photos, add a credit
-line. Only embed a widget, iframe, or script if the user explicitly asks, and wrap
-it in a fenced `html-embed` block so it survives publishing. Never invent embeds. If
-you have no real image source (no asset library, no stock provider, no user-supplied
-paths), omit images rather than invent file paths or URLs.
+- The first line is the H1: `# Title`.
+- Every line of the post is reader-facing copy: no notes to the user, no word counts,
+  no "[insert X]" placeholders.
+- Images only where they help a section, never a default hero. Use markdown image
+  syntax with descriptive alt text, and only real image sources (user paths, an asset
+  library, a stock provider). With no source, leave images out. For stock photos, add
+  a credit line.
+- Embed a widget, iframe, or script only when the user asks, inside a fenced
+  `html-embed` block so it survives publishing.
+- In a "best X" or comparison post where the blog sells one of the options, say so
+  in the post and judge it by the same criteria as the rest. Readers discount
+  self-ranked lists, and AI answers tend to cite them while leaving the publisher
+  out.
 
 ## Output
 
-The finished post in markdown, starting with `# Title`, ready to paste into the CMS.
-Nothing else: no preamble, no notes.
+The post in markdown, starting with `# Title`, ready to paste into a CMS. If you are
+writing to a file, the file holds only the post.
+
+Then, below a `---` line (or in your reply when you wrote a file), short notes for the
+author:
+
+- The meta title, description, and slug.
+- Spots where first-hand experience or a real number would strengthen the post.
+- Two or three places a screenshot, chart, or photo would help, if the post has no
+  images.
+- Any claim the author should verify before publishing.
+- Assumptions you made (audience, length, angle), if any.
+
+Keep everything after the meta fields under about 80 words. Skip a bullet that has
+nothing in it.
 
 ## Related skills
 
-blog-context · brand-voice · keyword-research · serp-analysis · humanize · internal-links · meta · seo-optimize · youtube-to-blog
+blog-context · brand-voice · content-plan · keyword-research · serp-analysis · humanize · internal-links · meta · seo-optimize · ai-seo · refresh · youtube-to-blog

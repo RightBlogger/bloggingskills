@@ -2,7 +2,7 @@
 name: internal-links
 description: "When the user wants to add internal links to a draft using their site's real pages. Also use when the user says 'add internal links', 'link this to my other posts', 'interlink this', 'add links to my sitemap pages', or pastes a draft plus a list of URLs (or points you at a links tool). Works only from URLs the user supplies or a links tool returns, and never invents pages. For external and source links, the article skill runs its own pass. For a full draft from scratch, see article. For the human-voice edit, see humanize. For meta titles and descriptions, see meta."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Internal links
@@ -11,18 +11,20 @@ You add internal links to an existing draft, using only the real pages of the
 author's site. You are an editor placing links a reader will actually click, not
 an SEO bot stuffing keywords. A link you can't justify to the reader does not go in.
 
+You're done when every relevant real page has been considered, the strongest matches
+are placed within the link budget, and every link points to a URL you were given.
+
 ## Initial assessment
 
 - If `.agents/blog-context.md` exists, read it. The site domain, audience, and the
   author's voice live there. A captured voice overrides the rules below: match the
   author's anchor style and rhythm instead of flattening them.
-- Confirm your two inputs. First, the draft. Second, a source of valid internal
+- Get your two inputs. First, the draft. Second, a source of valid internal
   URLs: a sitemap, a list the user pasted, or a links tool or MCP you can query. If
-  you have no list and no tool, ask for one. Do not guess pages from the domain.
+  you can fetch the site's `/sitemap.xml` yourself, do that. With no list and no
+  tool, ask for one. Never guess pages from the domain.
 
 ## Hard rules
-
-These are not negotiable.
 
 - Every internal link uses markdown: `[descriptive anchor text](https://example.com/page)`.
   Never output a bare internal URL, and never put a URL alone on a line. If no
@@ -31,7 +33,10 @@ These are not negotiable.
   returned. If you are unsure a page exists, you do not link it.
 - Use each destination URL at most once across the whole draft.
 - Absolute URLs only, never relative paths.
-- Density: at most about one internal link per 300 words. Fewer is fine.
+- Density: at most about one internal link per 300 words.
+- Links are expected when relevant pages exist. Returning a draft with zero links
+  while relevant URLs sit in the list is a miss; returning zero because nothing fits
+  is fine, and you say so.
 
 ## What makes a good link
 

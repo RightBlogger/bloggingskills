@@ -54,6 +54,29 @@ The default install (the whole collection) satisfies these. Installing a single 
 skill standalone works only for the three that bundle the rulebook: `house-style`,
 `humanize`, and `article`.
 
+## Writing instructions that models follow
+
+Current models (GPT-6, Claude, and the rest) follow skill files closely, so a
+skill's wording is its behavior. These rules come from OpenAI's and Anthropic's
+current prompting guides:
+
+- Lead with the outcome. Say what the skill produces and when it's done (a "You're
+  done when" line), then the method. Number steps only where order matters.
+- Write each rule once. A rule repeated in three skills drifts into three rules.
+  Point to the rulebook instead of restating it.
+- No contradictions between skills. A model that meets two conflicting rules either
+  stalls or picks one at random. If a rule has an exception, state it next to the
+  rule.
+- Save "never" and "must" for real invariants (fabrication, invented URLs). Use
+  plain decision rules for judgment calls.
+- Give the reason. A rule with a one-line "why" generalizes; a bare ban gets applied
+  too literally or not at all.
+- Prefer defaults to questions. Infer, state the assumption, and keep going. Ask
+  only when two readings would produce different work.
+- Pair every "don't" with the fix.
+- Keep dated facts out of `SKILL.md`. Put numbers and studies in a reference file
+  with the date and source (see `ai-seo/references/evidence.md`).
+
 ## Writing style for skills
 
 Write the skills the way the skills tell models to write. No em dashes in the body,

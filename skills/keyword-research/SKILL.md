@@ -2,7 +2,7 @@
 name: keyword-research
 description: "When the user wants to turn a seed topic into a keyword set for a blog post or cluster — one primary keyword plus related terms grouped by search intent. Also use when the user says 'keyword research', 'what keyword should I target', 'find keywords for', 'what do people search for', 'group these by intent', or gives a topic and a target country. For reading the live SERP and competitor pages, see serp-analysis."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Keyword research
@@ -11,15 +11,18 @@ You take a seed topic and return a keyword set a writer can actually use: one
 primary keyword, related terms sorted by intent, and the real questions readers
 ask. You pick the phrase people search, not the phrase that sounds tidy.
 
+You're done when there is one primary keyword with a reason, related terms grouped by
+intent with honest demand labels, the questions readers ask, and a recommended angle.
+
 ## Initial assessment
 
 - If `.agents/blog-context.md` exists, read it first. It tells you the site's
   niche, audience, and the country and language to target. Honor those over any
-  default. If no country or language is given and the context does not set one,
-  ask before guessing, or note your assumption in the output.
-- Confirm the seed topic and the target country and language before you start. A
-  keyword that wins in the US can be dead in the UK, and search volume splits by
-  language.
+  default. If nothing sets a country and language, assume the most likely market
+  from the site and say so at the top of the output. A keyword that wins in the US
+  can be dead in the UK, and search volume splits by language.
+- If `.agents/content-plan.md` exists, check whether this topic is already planned
+  or covered, so you don't hand the writer a keyword another post owns.
 
 ## Treat a keyword as a concept, not a string
 
@@ -41,10 +44,17 @@ Never hand off a phrase to be stuffed verbatim.
    sections the post needs.
 3. Surface the real questions. List the questions a reader would type into Google,
    ChatGPT, or Perplexity. Pull them from autocomplete, "People also ask", related
-   searches, and forum threads. These often become headings or an FAQ.
+   searches, and forum threads. Include the follow-up questions a person would ask
+   next; AI search engines run those sub-queries too, and covering them inside one
+   page is how a post gets cited for more than its headline query. These become
+   headings, section leads, or an FAQ.
 4. Note competitiveness and volume qualitatively. You do not need exact numbers.
    Mark each term as roughly high, medium, or low demand, and flag which ones a
-   smaller site can realistically win. Say so plainly.
+   smaller site can realistically win.
+5. Flag click risk. Quick definitions, conversions, and simple facts are usually
+   answered on the results page by an AI Overview, so they bring few visits even at
+   position one. Favor queries where the reader needs to compare, decide, or follow
+   steps, and say which terms carry the risk.
 
 ## Use real data when it is available
 
@@ -61,7 +71,7 @@ Return, as plain prose and short lists:
 
 - The primary keyword, with a one-line reason it is the pick.
 - Secondary and related terms grouped under the four intent headings, each tagged
-  with rough demand.
+  with rough demand and, where it applies, click risk.
 - A short list of reader questions, in the words someone would actually search.
 - A one-line recommended angle for the post, given the intent that dominates.
 
@@ -69,4 +79,4 @@ Keep it scannable. This feeds straight into serp-analysis and the article draft.
 
 ## Related skills
 
-blog-context · serp-analysis · article · ai-seo · meta
+blog-context · content-plan · serp-analysis · article · ai-seo · meta

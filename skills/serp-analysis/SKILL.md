@@ -2,14 +2,19 @@
 name: serp-analysis
 description: "When the user wants to know what it takes to rank for a target keyword by reading the live top results and turning them into a content brief. Also use when the user says 'analyze the SERP', 'what's ranking for', 'check the competition for this keyword', 'what do I need to cover to rank', 'size up the top results', or gives a URL to analyze against the keyword it targets. For turning a seed topic into a keyword set, see keyword-research. For optimizing an existing draft against the results, see seo-optimize."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # SERP analysis
 
 You read the current top results for one keyword and report what it takes to win
-the page. You return an editorial angle and a brief, not a list of words to
-sprinkle in. The point is to find where the leaders are weak, not to copy them.
+the page, including the AI answer that now sits above it. You return an editorial
+angle and a brief rather than a list of words to sprinkle in. The point is to find
+where the leaders are weak.
+
+You're done when the brief names the dominant intent, the table stakes, one real gap,
+and the single angle to win, each grounded in pages you actually read or clearly
+marked as inferred.
 
 ## Initial assessment
 
@@ -18,8 +23,8 @@ sprinkle in. The point is to find where the leaders are weak, not to copy them.
   Honor those over any default.
 - Confirm the target keyword. If the user gave a URL instead, work out the
   keyword it is built to rank for and analyze against that. If neither the user
-  nor the context fixes a country and language, ask before guessing, or note your
-  assumption in the output.
+  nor the context fixes a country and language, assume the most likely market from
+  the site and say so in the brief.
 - Check what you can fetch. If a search or SERP tool is connected (for example an
   MCP that returns results, or the ability to fetch result URLs directly), use
   it. If nothing can reach the web, say so plainly and ask the user to paste the
@@ -27,23 +32,29 @@ sprinkle in. The point is to find where the leaders are weak, not to copy them.
 
 ## Method
 
-1. Pull the top three to five organic results. Skip ads and skip pure
-   aggregators unless they genuinely compete. Note who ranks: the kind of site,
-   not just the URL, since a forum thread and a vendor guide signal very
-   different things about the page.
-2. Read the dominant intent. From the titles and the pages themselves, decide
+1. Pull the top five organic results. Skip ads and skip pure aggregators unless
+   they genuinely compete. Note who ranks: the kind of site, not just the URL,
+   since a forum thread and a vendor guide signal very different things.
+   Fetch and read the pages themselves when you can, not only their titles.
+2. Read the rest of the page. Note whether an AI Overview or AI Mode answer
+   appears, what it says, and which pages it cites (often not the top ten). Note
+   YouTube results, Reddit or forum threads, and "People also ask" questions. An AI
+   answer that fully satisfies the query means few clicks are left; say so, and
+   aim the post at the part of the question the summary can't settle.
+3. Read the dominant intent. From the titles and the pages themselves, decide
    what the searcher actually wants: a how-to, a comparison, a definition, a
    buying decision, a tool. Get this wrong and depth will not save the piece.
-3. Map the table stakes. List the subtopics and headings that nearly every
+4. Map the table stakes. List the subtopics and headings that nearly every
    result covers. These are the sections a reader expects; leaving one out reads
    as a gap, not a choice.
-4. Spot the optional angles. Note the subtopics only some pages cover. These are
+5. Spot the optional angles. Note the subtopics only some pages cover. These are
    where the field disagrees about what matters, and where a sharper take can
    live.
-5. Find the gap. This is the work. Look for what is missing, thin, outdated, or
+6. Find the gap. This is the work. Look for what is missing, thin, outdated, or
    generic across the results: a step nobody shows, a claim nobody backs, advice
-   that aged out, a question left hanging. Look for where you can be more
-   specific, more current, or more credible than what ranks now.
+   that aged out, a question left hanging, a "best X" list ranked by the company
+   that sells X. Check the "Experience and proof" section of the context file for
+   material that fills the gap with first-hand detail.
 
 ## Use the gap, do not mirror the structure
 
@@ -61,8 +72,11 @@ Return a short brief in plain prose and tight lists:
 - The must-cover subtopics, the table stakes a contender cannot skip.
 - The gap: what is missing, thin, or dated across the current results, and where
   you can be more specific or credible.
-- A recommended depth to be competitive: a rough word-count range and a
-  heading-count range, drawn from what ranks, not a fixed target.
+- What the AI answer and the other result types (video, forums) cover, and the
+  part of the question they leave open.
+- A recommended depth: a rough word-count range drawn from the pages that rank.
+  Length follows the question; Google has no preferred word count, and a focused page
+  often beats a longer one.
 - The single sharpest angle to win, stated as the editorial promise of the piece.
 
 This feeds straight into the article outline and pairs with keyword-research. For
@@ -71,4 +85,4 @@ seo-optimize.
 
 ## Related skills
 
-blog-context · keyword-research · article · seo-optimize · ai-seo · house-style
+blog-context · keyword-research · content-plan · article · seo-optimize · ai-seo · refresh

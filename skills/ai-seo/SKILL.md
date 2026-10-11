@@ -1,72 +1,120 @@
 ---
 name: ai-seo
-description: "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user says 'AI SEO', 'AEO', 'GEO', 'answer engine optimization', 'generative engine optimization', 'optimize for ChatGPT', 'optimize for Perplexity', 'AI Overviews', 'get cited by AI', 'AI citations', or 'optimize for Gemini'. This is about extractability and trust signals, not ranking. For on-page keyword optimization, see seo-optimize. For human-voice editing, see humanize. For SERP and competitor context, see serp-analysis."
+description: "When the user wants a post to be cited by AI search and answer engines — ChatGPT search, Perplexity, Google AI Overviews and AI Mode, Gemini, Claude. Also use when the user says 'AI SEO', 'AEO', 'GEO', 'LLM SEO', 'answer engine optimization', 'generative engine optimization', 'optimize for ChatGPT', 'optimize for Perplexity', 'AI Overviews', 'AI Mode', 'get cited by AI', 'AI citations', or 'should I add llms.txt'. Audits and edits a post so its answers are easy to lift and safe to cite, and separates what helps from what's myth. For on-page keyword optimization, see seo-optimize. For human-voice editing, see humanize. For SERP and competitor context, see serp-analysis. For an old post losing clicks to AI answers, see refresh."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # AI SEO
 
-You make a blog post citable by AI answer engines: ChatGPT, Perplexity, Google AI
-Overviews, Gemini, and Claude. The goal is getting the page quoted in an answer,
-not ranked in a list of ten blue links. Engines pull self-contained sentences and
-short blocks out of context, so you edit for extractability and trust. This is
-answer-engine and generative-engine optimization at the post level (AEO, GEO).
+You make a blog post the source AI answer engines quote: ChatGPT search, Perplexity,
+Google AI Overviews and AI Mode, Gemini, and Claude. These engines retrieve pages
+from a search index first and then quote passages that answer the question cleanly,
+so a page has to be findable, and then easy to lift and safe to cite. You work on the
+second part and check the first.
 
-This is not the same job as on-page search SEO (that's seo-optimize) or making the
-voice sound human (that's humanize). Those tune keywords and tone. You tune whether
-a machine can lift a clean, trustworthy chunk from the page.
+You're done when the post answers its core question in its opening, each section
+leads with a self-contained answer, every important claim is specific and sourced,
+the trust signals are visible, and the user knows which off-page steps matter.
+
+## What helps and what doesn't
+
+Give the user this distinction plainly, because the AEO and GEO space is full of
+paid advice that isn't backed by the engines themselves.
+
+What helps, and why:
+- Ranking. AI features retrieve from the same index and ranking systems as regular
+  search, often for several related sub-queries at once. A page that can't rank for
+  any of them rarely gets cited.
+- Front-loaded answers. Engines quote the opening of a page far more than the end.
+- Self-contained, specific sentences with numbers, names, and dates. Engines quote
+  sentences, not pages.
+- Focused pages. A page that answers one question well beats an "ultimate guide"
+  that answers twenty thinly.
+- First-hand experience, original data, and a named author with real credentials.
+  These make a quote safe to cite.
+- Freshness that's real. ChatGPT and Perplexity lean toward recently updated pages,
+  and a substantive update is worth showing with a visible date.
+- Mentions elsewhere. Engines weigh what other sites, forums, and videos say about a
+  brand, not only what the brand says about itself.
+
+What doesn't, per Google's own guidance on AI search:
+- An `llms.txt` file. Google Search ignores it, and there's no evidence it earns
+  citations elsewhere.
+- Chopping a page into tiny chunks or rewriting it in a special "AI style."
+- Special schema for AI features. Structured data still helps regular rich results
+  (Article, Product, VideoObject), but FAQ markup no longer produces rich results for
+  most sites.
+- A separate page for every phrasing of a question. That's scaled content abuse, and
+  it can get a site demoted.
+- Self-ranked "best X" lists that put the publisher first. Engines tend to cite those
+  pages while leaving the publisher out of the answer.
+
+[references/evidence.md](references/evidence.md) has the sources and numbers behind
+these, dated. Cite them when the user asks why.
 
 ## Initial assessment
 
-- If `.agents/blog-context.md` exists, read it. Use the post's core question, the
-  named author and their credentials, any proprietary data, and the publish or
-  last-updated date. A captured author voice still wins over any rule here.
-- Take the input as text or a URL. Identify the one question this page answers. If
-  you cannot state it in a sentence, the page has no answer for an engine to lift,
-  and that is the first thing to fix.
+- If `.agents/blog-context.md` exists, read it for the author, credentials, and the
+  "Experience and proof" section. A captured voice still wins over any rule here.
+- Read the house-style rulebook at `../house-style/references/ai-tells.md` before you
+  write any new sentence.
+- Take the post as text or a URL. State the one question it answers in a sentence. If
+  you can't, the page has no answer for an engine to lift; fix that first.
+- If you can search the web, look at how AI answers currently handle the question and
+  which pages they cite. That's the bar.
+- If the post is stale (old prices, versions, or a past year in the title), say so
+  first and point to refresh. Engines favor current pages, and no amount of
+  restructuring makes an outdated answer safe to cite.
 
 ## Method
 
-Audit the post against the checklist below, then apply or propose each edit.
+Audit against these checks, then apply or propose each edit.
 
-1. Answer-first block (BLUF). Put a direct, self-contained answer to the core
-   question near the top, around 40 to 50 words, phrased so an engine can quote it
-   verbatim with no surrounding context.
-2. Key takeaways. Add a short, scannable summary of the main points near the top.
-   Engines lift these blocks often, so make each line stand on its own.
-3. Question-style headings. Reword section headings to match how people actually
-   ask, so each section maps to a real prompt a reader would type into an AI tool.
-4. FAQ. Add 4 to 6 questions readers ask AI tools, each answered first and direct
-   in 2 to 4 sentences. The article skill covers this writing pattern; reuse it.
-5. Self-contained claims. Rewrite important sentences so each holds up alone, out
-   of context. Replace vague phrasing with specific numbers, named things, and
-   dates. Engines quote sentences, not whole pages.
-6. Experience and trust signals (E-E-A-T). Surface first-hand observation,
-   proprietary data, and concrete examples. Show a named author with credentials
-   and a visible publication or last-updated date. These are what make a quote safe
-   to cite.
-7. Structured data. Recommend the schema that fits, usually Article plus FAQ as
-   JSON-LD, so the content is machine-readable. Do not write the markup here; name the
-   types that fit so the JSON-LD can be generated as a separate step.
+1. Answer first. The core question gets a direct, self-contained answer in the first
+   100 words, about 40 to 60 words long, quotable with no surrounding context. When
+   this collides with another rule, a clear, quotable answer beats an exact word
+   count.
+2. Opening third. The key facts, numbers, and the main recommendation appear in the
+   first third of the post, not saved for the end.
+3. Section leads. Each H2 opens with one or two sentences that answer that section's
+   question on their own. Rewrite headings toward how people actually ask only where
+   that is how they search.
+4. Sub-questions. List the follow-up questions a person (or an engine's fan-out)
+   would ask next. Cover the missing ones inside this page, briefly. Don't propose new
+   pages for each.
+5. Specifics. Replace vague claims with numbers, names, dates, and sources. Flag any
+   claim with no source rather than invent one.
+6. Trust signals. A named author with relevant credentials, a visible publish or
+   updated date, first-hand evidence (a test, a photo, original data), and links to
+   primary sources.
+7. A summary block. One short "Key takeaways" list near the top helps skimmers and
+   gets quoted. Check the post doesn't already have one under another name (TL;DR,
+   Summary, At a glance) before adding it.
+8. FAQ. Add 3 to 5 questions only if readers still have real questions the body
+   didn't answer. It's for readers and answer engines, not for rich results.
+9. Access. If you can read the site's `robots.txt`, confirm it doesn't block the
+   search crawlers the user cares about: Googlebot, Bingbot (Copilot draws on Bing),
+   OAI-SearchBot for ChatGPT search, Claude-SearchBot, and PerplexityBot.
+   Blocking a training crawler like GPTBot doesn't remove a site from those search
+   results.
 
-Respect frequency over prohibition. One answer-first block and one takeaways list
-is the point; do not turn the whole post into stacked summary boxes.
+One answer-first block and one takeaways list is the point. Don't stack summary boxes.
 
 ## Output
 
-Lead with a short AEO audit: what is missing against the seven checks above. Then
-give the concrete edits, applied or proposed, in this order:
+1. If the user asked a direct question (llms.txt, schema, a specific engine), answer
+   it first in a few lines.
+2. A short audit: which of the nine checks the post fails, worst first.
+3. The edits, ready to paste, in this order: the answer-first opening, the takeaways
+   list, the rewritten section leads, the added sub-question coverage, and the FAQ if
+   it earned one.
+4. Off-page steps, in two or three lines: where the brand should be mentioned or
+   reviewed, a YouTube video if the topic suits one, and how to watch results (AI
+   referral traffic in analytics, and Search Console's AI reporting where available).
 
-- the answer-first block (the 40 to 50 word version, ready to paste)
-- the key takeaways list
-- the reworked question-style headings
-- the FAQ questions and answer-first responses
-- a one-line schema recommendation naming the types that fit
-
-Keep the audit tight and the edits ready to drop in. Do not restate the post back
-to the user.
+Don't restate the post back to the user.
 
 ## Related skills
 
-seo-optimize · serp-analysis · article · humanize · house-style
+seo-optimize · serp-analysis · refresh · article · humanize · house-style

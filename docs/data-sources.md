@@ -20,6 +20,8 @@ are examples, not requirements. Any source in the same category does the job.
 
 | Skill | Data-source category | What it unlocks |
 |-------|---------------------|-----------------|
+| content-plan | search analytics plus a sitemap or CMS index (Google Search Console, an XML sitemap, the CMS API) | Queries the site already earns impressions for with no page built for them, and a real inventory of existing posts so the plan never duplicates or cannibalizes one. |
+| refresh | search analytics plus web search (Google Search Console, a SERP API or search MCP) | The page's clicks, impressions, and queries now against a year ago, so the decline gets diagnosed from evidence, plus the current top results to measure against. |
 | keyword-research | search analytics / keyword data (Google Search Console, a keyword research API or MCP) | Real search volumes, difficulty scores, and the queries your site already ranks for, instead of inferred term lists. |
 | seo-optimize | search analytics / keyword data (Google Search Console, a keyword API or MCP) | The terms a page already gets impressions for, so the optimization pass targets demand that exists rather than demand it assumes. |
 | meta | search analytics / keyword data (Google Search Console, a keyword API or MCP) | The actual query and click-through data behind a page, so the title and description are written to win the clicks the page is positioned for. |

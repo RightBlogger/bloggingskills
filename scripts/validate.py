@@ -23,7 +23,7 @@ warnings = []
 EM_DASH = "—"
 ARROWS = ["→", "⇒"]
 # Skills referenced before they were built. Flag any "see <name>" that points here.
-RETIRED = ["content-plan", "copy-edit", "repurpose"]
+RETIRED = ["copy-edit", "repurpose"]
 
 skill_names = sorted(
     d for d in os.listdir(SKILLS) if os.path.isdir(os.path.join(SKILLS, d))
@@ -107,6 +107,17 @@ for name in skill_names:
     for r in RETIRED:
         if re.search(r"\bsee " + re.escape(r) + r"\b", text):
             errors.append(f"{name}: references unbuilt skill '{r}'")
+
+    # References are reader-facing prose too. Lines that name the dash are
+    # demonstrating it (the rulebook has to show the character it bans).
+    refdir = os.path.join(SKILLS, name, "references")
+    if os.path.isdir(refdir):
+        for fn in sorted(os.listdir(refdir)):
+            if not fn.endswith(".md"):
+                continue
+            for i, line in enumerate(open(os.path.join(refdir, fn), encoding="utf-8"), 1):
+                if EM_DASH in line and not re.search(r"dash", line, re.I):
+                    errors.append(f"{name}/references/{fn}: em dash in line {i}: {line.strip()[:60]}")
 
 # Bundled ai-tells.md copies must match the canonical house-style copy byte for byte.
 canonical = os.path.join(SKILLS, "house-style", "references", "ai-tells.md")

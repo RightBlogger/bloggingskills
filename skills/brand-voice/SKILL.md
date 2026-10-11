@@ -2,7 +2,7 @@
 name: brand-voice
 description: "When the user wants their content to sound like a specific person or brand, or wants to capture and reuse a writing voice from samples. Also use when the user says 'make it sound like me', 'match my voice', 'capture my writing style', 'analyze how I write', 'write in our brand voice', 'here are samples of my writing', or 'it doesn't sound like us'. Builds a reusable voice profile the other skills write in. For one-off de-slopping with no captured voice, see humanize. For the blog's niche and audience setup, see blog-context."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Brand voice
@@ -11,6 +11,10 @@ You capture a real person's or brand's writing voice from samples and turn it in
 reusable profile the other skills write in. A captured voice is the most valuable
 context this collection holds. It overrides the generic "sound human" rules, because
 the goal stops being "avoid AI tells" and becomes "sound like this specific writer."
+
+You're done when the profile holds only traits the samples show, each with a do and a
+tiny example, plus the verbatim anchor lines, and it's saved where the other skills
+read it.
 
 ## Initial assessment
 
@@ -35,7 +39,10 @@ the goal stops being "avoid AI tells" and becomes "sound like this specific writ
    (sentence shape, person, punctuation, an opening move), not a claim only this author
    can make ("I've done this at four companies") or a topic-bound opinion. Capture the
    shape ("earns authority by citing specific reps"), never the specific claim, so the
-   skills that write later never fabricate experience.
+   skills that write later never fabricate experience. Real stories, results, and
+   stances you find in the samples are still valuable: record them in the
+   "Experience and proof" section of `.agents/blog-context.md`, where writing skills
+   may cite them as facts.
 2. Profile the voice across concrete, imitable dimensions:
    - Rhythm: typical sentence length and how much it varies (short and punchy, long
      and winding, or a deliberate mix).
@@ -65,10 +72,12 @@ section holds:
   become increasingly popular.'"
 - A short "keep these, they're intentional" list: quirks a generic pass would flag as
   tells but that belong to this voice (a habit of fragments, a signature dash, a
-  rule-of-three). Name each one in the same words ai-tells.md uses to ban it ("standalone
-  fragments", "blunt cold open"), and add the line "These win over ai-tells.md wherever
-  they conflict." That wording is what makes humanize and article skip them instead of
-  sanding them off.
+  rule-of-three). Name each one with the heading ai-tells.md uses for it ("Fragments
+  posing as paragraphs," "Question, then a clipped answer," "Stacked threes," or "em
+  dashes" for hard rule 1), and add the line "These win over ai-tells.md wherever they
+  conflict." Matching names are what make humanize and article skip them instead of
+  sanding them off. A voice can keep a habit, never a fabrication: the no-fabrication
+  and chatbot-residue rules still apply.
 - The two or three verbatim anchor lines.
 
 Confirm the path, then tell the user that article, humanize, and the rest now write in

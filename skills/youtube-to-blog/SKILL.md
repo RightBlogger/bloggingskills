@@ -1,93 +1,84 @@
 ---
 name: youtube-to-blog
-description: "When the user wants to turn a YouTube video or its transcript into a publish-ready blog post that ranks and reads like a person wrote it, not a raw transcript dump. Also use when the user says 'turn this video into a blog post', 'write a post from this YouTube link', 'repurpose this video', 'blog version of my video', or pastes a transcript and a URL. Inputs are a video URL or transcript, a length tier, and whether to embed the video. For a topic or keyword instead of a video, see article. For only the human pass on existing text, see humanize."
+description: "When the user wants to turn a YouTube video or its transcript into a publish-ready blog post that ranks and reads like a person wrote it, not a raw transcript dump. Also use when the user says 'turn this video into a blog post', 'write a post from this YouTube link', 'repurpose this video', 'blog version of my video', or pastes a transcript and a URL. Inputs are a video URL or transcript, a length, and whether to embed the video. For a topic or keyword instead of a video, see article. For only the human pass on existing text, see humanize."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # YouTube to blog
 
 You turn a video into a blog post that earns its own search traffic. The transcript
 is raw material, not the draft. You reorganize its ideas around what a reader came
-to find, add context the camera skipped, and run the same pipeline the article skill
-uses: outline, section-by-section drafting, then a humanize pass.
+to find, add the context the camera skipped, and run the article skill's pipeline:
+outline, section-by-section drafting, then a humanize pass.
+
+The post is done when it stands on its own for someone who never watches the video,
+follows the reader's question instead of the speaker's order, passes the rulebook's
+self-check, and contains nothing the video or the user didn't support.
 
 ## Initial assessment
 
 1. Read `.agents/blog-context.md` for niche, audience, pillars, and voice. If it
-   doesn't exist, ask the three essentials inline (audience, goal, voice) or suggest
-   running blog-context first.
-2. Read the house-style rulebook at `../house-style/references/ai-tells.md` (it also
-   sits at `../article/references/ai-tells.md`, since this skill builds on the article
-   pipeline and expects both installed alongside). That file is the full contract; do
-   not write in slop.
-3. Confirm the inputs: the video URL or pasted transcript, the length tier, and
-   whether the user wants the video embedded in the post.
-
-## Length tiers (target word counts and heading count)
-
-short ~1,000 (about 10 headings) · medium ~1,500 (about 15) · long ~2,500 (about 25)
-· very-long ~3,500 (about 40). Hold the final draft within roughly 90 to 105% of
-target and trim before returning.
+   doesn't exist, assume a general reader and a plain conversational voice, say so in
+   your notes, and keep going.
+2. Read the house-style rulebook at `../house-style/references/ai-tells.md` (also at
+   `../article/references/ai-tells.md`; this skill builds on article and expects it
+   installed alongside). It is the full writing contract.
+3. Get the inputs: the video URL or transcript, the length, and whether to embed the
+   video. Length tiers match the article skill: micro ~500, short ~1,000, medium
+   ~1,500, long ~2,500, very-long ~3,500, and an explicit word count wins. Land
+   within 90 to 105% of the target. Default to medium and embedding on when the user
+   doesn't say.
 
 ## Method
 
 ### 1. Get the transcript
 
-If the user gave a URL and a YouTube tool or MCP is available, pull the transcript
-that way. Otherwise ask the user to paste it. Either way, capture the video title and
-channel name so you can attribute the source later.
+If a YouTube or transcript tool is available, pull the transcript, title, and channel
+name with it. Otherwise ask the user to paste the transcript. Don't write the post
+from the title and description alone; that produces a summary of a video you haven't
+seen.
 
-### 2. Build an outline from the transcript's ideas
+### 2. Outline around the reader, not the timeline
 
-Mine the transcript for its substance, then reorganize it around reader search intent
-rather than the order the speaker happened to cover things. A video meanders; a post
-answers the question the reader typed. Reuse the article skill's outline approach in
-[../article/references/outline.md](../article/references/outline.md): intent-driven
-headings that describe what the reader learns, the primary keyword or a variant in at
-least one heading, related terms spread across the rest. Scale the heading count to
-the length tier above. Offer the user a checkpoint here if they want one.
+Mine the transcript for its substance, then reorganize it around the question a
+searcher would type. A video meanders; a post answers. Use the article skill's
+[outline guidance](../article/references/outline.md). The speaker's
+own demonstrations, results, and opinions are this post's information gain, so give
+them a section, not a passing mention. Offer a checkpoint here only if the user asked
+for one.
 
 ### 3. Draft section by section
 
-Write each section in order, the same way the article skill does in
-[../article/references/sections.md](../article/references/sections.md). Hold the
-running draft in mind so you never repeat a point you already made. Aim for 250 to
-350 words under each H2. Treat the topic as a concept, not a fixed phrase, so every
-keyword mention reads as natural prose. Follow house-style throughout.
+Follow the article skill's [section rules](../article/references/sections.md). Hold
+the running draft in mind so no point repeats. Add the context, definitions, and
+examples that went unsaid on camera, and never paraphrase the transcript line by line.
+A post that restates the video in order reads like a caption file and ranks like one.
 
-The job here is to add value, not to transcribe. Bring in context, examples, and
-detail that went unsaid on camera. Never paraphrase the transcript line by line; a
-post that just restates the video in order reads like a caption file and ranks like
-one.
+Attribute first-hand claims to the speaker ("In the video, Sam tests...") unless the
+user is the speaker and wants first person.
 
-### 4. Embed the video if requested
+### 4. Embed and attribute
 
-If the user wants the video in the post, place the YouTube URL on its own line as
-plain text, near the start, right after the introduction. A bare URL alone on a line
-auto-embeds in most CMSs. Do not wrap it in markdown link syntax and do not add an
-iframe; the plain URL is what triggers the embed.
+If embedding is on, put the YouTube URL on its own line, as plain text, right after
+the introduction. Most CMSs auto-embed a bare video URL; markdown link syntax or an
+iframe breaks that. Credit the video and channel in the intro or the first section.
 
-### 5. Attribute the source
+### 5. Humanize
 
-Credit the original video and the channel somewhere natural, so the post stands as
-its own work while pointing readers back to the source.
-
-### 6. Humanize before finishing
-
-Run ai-tells.md's "Quick self-check before shipping" against the draft: search for em
-dashes, "serves as," "it's not," "here's the," bold-colon bullets, and the
-question-then-fragment-answer pattern ("Want X? Do Y."), and read every three
-consecutive sentences for repeated openings. For a deeper rewrite, hand off to the
-humanize skill. This is not optional; it is what separates the post from a cleaned-up
-transcript. If the user wants visuals, you can also suggest screenshots at key moments
-in the video, each with a short caption, but only when they help a section.
+Run the rulebook's "Quick self-check before shipping" on the full draft and fix what it
+finds. Transcripts carry spoken filler ("so basically," "you know," "right?") that
+reads badly on the page; cut it.
 
 ## Output
 
-The finished post in markdown, starting with `# Title`, ready to paste into the CMS,
-with the video embedded near the top if the user asked for it. Nothing else: no
-preamble, no notes, no word counts.
+The post in markdown, starting with `# Title`, with the video URL after the intro if
+embedding is on. If you are writing to a file, the file holds only the post.
+
+Then, below a `---` line (or in your reply when you wrote a file), short notes: the
+meta title, description, and slug if you wrote them, up to three timestamps worth a
+screenshot, a reminder to add VideoObject structured data if the CMS doesn't, and any
+assumption you made. Under 100 words.
 
 ## Related skills
 

@@ -41,21 +41,21 @@ time to tool sprawl, and consolidating onto one platform helps.
 > Picking a project management tool is one of those decisions that quietly shapes how a
 > team spends its days. Get it wrong and the cost compounds.
 >
-> Most teams aren't buried by their workload. They're buried by the tools meant to handle
-> it. The software that promised to speed things up ends up slowing everyone down: an
-> hour lost switching apps, another hunting for a file. Over a week that adds up, and it
+> Most teams lose more time to their tools than to their workload. The software that
+> promised to speed things up ends up slowing everyone down: an hour lost switching
+> apps, another hunting for a file. Over a week that adds up, and it
 > works like a tax on everything the team is trying to ship.
 >
 > The fix is usually consolidation. Startups and large companies alike are moving their
 > work onto one platform instead of stitching five together. When the tool fits, the
-> change in how a team operates is hard to overstate.
+> hours spent switching apps come back.
 
 What changed, and why:
 
 - Kept the one real idea (tool sprawl wastes time; consolidating helps) and the one
   concrete image (the "tax"), since that was the draft's best line. Cut only the "Think
   of it as" frame around it.
-- Removed every banned phrase, both em dashes, the false range, and the AI-ese stack.
+- Removed every banned phrase, the false range, and the AI-ese stack.
 - Replaced "Studies show countless hours" with a concrete, honest picture ("an hour lost
   switching apps") instead of a fake statistic. If a real number existed it would go
   here; since none was given, the rewrite doesn't invent one. When a fact you need is

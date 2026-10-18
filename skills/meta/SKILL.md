@@ -1,8 +1,8 @@
 ---
 name: meta
-description: "Writes the SERP-facing metadata for a post: the meta title, meta description, and URL permalink, from the post (or topic) plus the primary keyword. Use when the user says 'write the meta', 'meta title and description', 'SEO title', 'permalink', 'URL slug', 'snippet for Google', or asks what shows up in search results before the click. For the full post, see article. For the human-voice pass, see humanize. For on-page keyword work, see seo-optimize."
+description: "Writes the SERP-facing metadata for a post: the meta title, meta description, and URL permalink, plus the lead image tags and a minimal Article JSON-LD that decide the thumbnail in Discover and AI answers, from the post (or topic) plus the primary keyword. Use when the user says 'write the meta', 'meta title and description', 'SEO title', 'permalink', 'URL slug', 'snippet for Google', 'og:image', 'Discover', 'article schema', or asks what shows up in search results before the click. For the full post, see article. For the human-voice pass, see humanize. For on-page keyword work, see seo-optimize."
 metadata:
-  version: 0.2.0
+  version: 0.3.0
 ---
 
 # Meta
@@ -72,6 +72,28 @@ the caps hold. Models miscount characters, so if you can run code, count with it
 (for example `len("...")`); otherwise count carefully and leave a few characters of
 headroom.
 
+## Image and structured data
+
+Google Discover and AI answers show a thumbnail, and Google picks it from `og:image`
+and the page's image markup. Discover's 2026 core update also demotes clickbait and
+favors original, in-depth posts, so the title rules above apply to `og:title` too.
+
+- `og:image`: the post's lead image, at least 1200px wide. The author's own photo or
+  screenshot beats stock, since Discover rewards original work. Use only a real image
+  path from the user or the post; with none, say the post needs a lead image instead
+  of inventing a URL.
+- `max-image-preview:large` in the robots meta tag, so Discover can show the large
+  card. Many sites set it site-wide already; check before adding it.
+- Article JSON-LD with `headline`, `image`, `datePublished`, `dateModified`, and
+  `author` as a Person with `name` and `url` pointing to a real author page. Take
+  every value from the post or `.agents/blog-context.md` and leave out any field you
+  can't fill truthfully. Change `dateModified` only when the content changed in
+  substance (see refresh).
+
+This markup earns thumbnails and ties the post to its author. It doesn't earn AI
+citations on its own (see ai-seo), so keep it to these fields. If the CMS or an SEO
+plugin already outputs them, give the values to fill in rather than raw markup.
+
 ## Output
 
 Return the three fields, labeled:
@@ -79,6 +101,8 @@ Return the three fields, labeled:
 - Meta title, with its character count.
 - Meta description, with its character count.
 - Permalink.
+- The lead image recommendation and the Article JSON-LD block, unless the user only
+  asked for the title and description.
 
 Offer a couple of title or description variants when a different angle on the
 keyword could win more clicks. Keep every variant inside the caps.

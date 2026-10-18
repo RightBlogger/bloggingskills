@@ -2,7 +2,7 @@
 name: refresh
 description: "When the user wants to update an existing, already-published blog post that has gone stale or lost traffic. Also use when the user says 'refresh this post', 'update this old article', 'this post lost traffic', 'my rankings dropped on this page', 'content decay', 'make this post current', 'update it for this year', or pastes an old post or URL and asks what to fix. Diagnoses why the post declined before changing anything, then updates facts, coverage, and freshness honestly. For tuning a draft around a keyword with no decline involved, see seo-optimize. For writing a new post, see article. For deciding which posts to refresh across the whole blog, see content-plan."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Refresh
@@ -41,9 +41,12 @@ Match the evidence to a cause. Each one calls for a different fix.
 | Outpaced | Competitors added depth, original data, or better examples | Add the missing coverage and real information gain |
 | Cannibalized | Another page on the same site ranks for the same queries | Merge into one page and redirect the other |
 | Absorbed by AI answers | Impressions steady or rising, clicks falling, position stable | Make it the cited source (ai-seo) and give readers a reason to click |
-| Not a content problem | Deindexed, a title rewritten in the SERP, a site-wide drop | Report it; editing the post won't help |
+| Discover-only drop | Search clicks steady, Discover traffic gone | Check the headline for clickbait and the post for depth and timeliness; check the lead image is large and original |
+| Not a content problem | Deindexed, a title rewritten in the SERP, a site-wide drop, the site opted out of AI features in Search Console | Report it; editing the post won't help |
 
-Causes often stack (outdated and outpaced is common); name the main one first. Write
+If the drop lines up with a Google update window, say which one; the dated list is
+in [references/google-updates.md](references/google-updates.md). Causes often stack
+(outdated and outpaced is common); name the main one first. Write
 the diagnosis before touching the text. If the evidence points to "not a content
 problem," stop there and say so.
 

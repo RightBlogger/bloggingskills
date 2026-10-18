@@ -56,7 +56,7 @@ repurpose   youtube-to-blog  (the article pipeline applied to a video)
 
 See each skill's "Related skills" line for the full map.
 
-## Available skills (v0.2)
+## Available skills (v0.3)
 
 | Skill | What it does |
 |-------|--------------|
@@ -79,7 +79,8 @@ See each skill's "Related skills" line for the full map.
 
 ### Option 1: CLI (recommended)
 
-Use [`npx skills`](https://github.com/vercel-labs/skills) to install.
+Use [`npx skills`](https://github.com/vercel-labs/skills) to install. The collection
+is listed on [skills.sh](https://www.skills.sh/rightblogger/bloggingskills).
 
 ```bash
 # Install all skills

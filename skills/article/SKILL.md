@@ -2,7 +2,7 @@
 name: article
 description: "When the user wants to write a complete, publish-ready blog post or article from a topic or keyword. Also use when the user says 'write a blog post', 'write an article about X', 'draft a post on', 'I need a 2000-word article', 'turn this keyword into a post', or gives a topic and a target length. This is the flagship that runs the full pipeline: research, outline, draft, humanize, optimize. For a video transcript instead of a topic, see youtube-to-blog. For optimizing a draft that already exists, see seo-optimize. For updating an old post, see refresh. For only humanizing existing text, see humanize."
 metadata:
-  version: 0.2.0
+  version: 0.3.0
 ---
 
 # Article
@@ -97,8 +97,10 @@ The rulebook covers style. These are specific to a finished post:
   no "[insert X]" placeholders.
 - Images only where they help a section, never a default hero. Use markdown image
   syntax with descriptive alt text, and only real image sources (user paths, an asset
-  library, a stock provider). With no source, leave images out. For stock photos, add
-  a credit line.
+  library, a stock provider). Prefer the author's own photos, screenshots, and charts
+  over stock: they prove the experience, and Google's AI search guidance and the
+  Discover update both reward original work. Use stock only when nothing original
+  fits, and add a credit line. With no source, leave images out.
 - Embed a widget, iframe, or script only when the user asks, inside a fenced
   `html-embed` block so it survives publishing.
 - In a "best X" or comparison post where the blog sells one of the options, say so

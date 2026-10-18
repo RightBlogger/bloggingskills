@@ -2,7 +2,7 @@
 name: ai-seo
 description: "When the user wants a post to be cited by AI search and answer engines — ChatGPT search, Perplexity, Google AI Overviews and AI Mode, Gemini, Claude. Also use when the user says 'AI SEO', 'AEO', 'GEO', 'LLM SEO', 'answer engine optimization', 'generative engine optimization', 'optimize for ChatGPT', 'optimize for Perplexity', 'AI Overviews', 'AI Mode', 'get cited by AI', 'AI citations', or 'should I add llms.txt'. Audits and edits a post so its answers are easy to lift and safe to cite, and separates what helps from what's myth. For on-page keyword optimization, see seo-optimize. For human-voice editing, see humanize. For SERP and competitor context, see serp-analysis. For an old post losing clicks to AI answers, see refresh."
 metadata:
-  version: 0.2.0
+  version: 0.3.0
 ---
 
 # AI SEO
@@ -97,7 +97,11 @@ Audit against these checks, then apply or propose each edit.
    search crawlers the user cares about: Googlebot, Bingbot (Copilot draws on Bing),
    OAI-SearchBot for ChatGPT search, Claude-SearchBot, and PerplexityBot.
    Blocking a training crawler like GPTBot doesn't remove a site from those search
-   results.
+   results. For Google, two more switches decide eligibility: the site must be
+   opted in to generative AI features in Search Console (an opted-out site gets no
+   AI Overview or AI Mode citations), and the page must allow a snippet, so check
+   for `nosnippet`, a tiny `max-snippet`, or `data-nosnippet` on the answer. If you
+   can't see these settings, ask the user to confirm them.
 
 One answer-first block and one takeaways list is the point. Don't stack summary boxes.
 
@@ -110,8 +114,11 @@ One answer-first block and one takeaways list is the point. Don't stack summary 
    list, the rewritten section leads, the added sub-question coverage, and the FAQ if
    it earned one.
 4. Off-page steps, in two or three lines: where the brand should be mentioned or
-   reviewed, a YouTube video if the topic suits one, and how to watch results (AI
-   referral traffic in analytics, and Search Console's AI reporting where available).
+   reviewed, a YouTube video if the topic suits one, and how to watch results. AI
+   referrers (chatgpt.com, perplexity.ai, gemini.google.com, copilot.microsoft.com,
+   claude.ai) belong in their own analytics channel. Search Console's generative AI
+   report and Bing's AI Performance report show citations and impressions but not
+   clicks, so read them as visibility, not traffic.
 
 Don't restate the post back to the user.
 

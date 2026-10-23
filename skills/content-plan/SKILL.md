@@ -2,7 +2,7 @@
 name: content-plan
 description: "When the user wants to decide what to write next, plan a batch of posts, or organize a blog into topic clusters without the posts competing with each other. Also use when the user says 'what should I write about', 'content plan', 'content calendar', 'blog topic ideas', 'topic clusters', 'plan my next 10 posts', 'content strategy for my blog', 'am I cannibalizing my own posts', or 'which old posts should I update'. Returns a prioritized list of posts, each with one keyword, one intent, and the angle only this blog can bring. For the keyword set behind a single post, see keyword-research. For writing a planned post, see article. For updating one decaying post, see refresh."
 metadata:
-  version: 0.1.0
+  version: 0.2.0
 ---
 
 # Content plan
@@ -12,8 +12,8 @@ posts where each one targets a distinct search intent, ladders up to a pillar, a
 an angle the blog can actually back with experience or data.
 
 You're done when every planned post has a distinct intent no existing page already
-serves, a pillar, a page type, and a reason it should exist, and the list is ordered
-by what to write first.
+serves, a pillar, a page type, and a reason it should exist, the list is ordered
+by what to write first, and the candidates you cut are listed with their reasons.
 
 ## Initial assessment
 
@@ -34,8 +34,11 @@ by what to write first.
    are thin. Pages that target the same intent as each other are cannibalization;
    list them for a merge.
 2. Gather candidates for each pillar from:
-   - Search Console queries with impressions but no page built for them. (Existing
-     pages stuck on positions 8 to 20 belong on the refresh list instead.)
+   - Search Console queries with impressions but no page built for them. Look first
+     at striking distance (an average position of about 5 to 20), where the site is
+     already close. Check the page earning those impressions: if it's built for the
+     query, it goes on the refresh list instead; if it only ranks in passing, plan
+     the new post and have that page link to it.
    - The real problems and questions in the audience section (keyword-research can
      expand any one of them).
    - Comparisons, alternatives, and "how to choose" decisions readers face.
@@ -51,7 +54,9 @@ by what to write first.
    opening), and the unique angle this blog can bring. Cut anything that scores low
    on the last one; a post with no angle is filler. Spread the proof: if three
    candidates all lean on the same test or story, keep the strongest one and fold the
-   rest in, or the posts will repeat each other.
+   rest in, or the posts will repeat each other. Note each candidate you cut and
+   why. A plan that shows its rejects can be checked, and writing them down stops
+   the ranking from sliding toward raw search volume.
 5. Shape clusters. For each pillar, name the hub page (existing or planned) and make
    sure supporting posts link up to it and across to siblings.
 
@@ -63,13 +68,17 @@ columns: working title, primary keyword, intent, page type (how-to, comparison, 
 list, explainer, opinion), pillar, demand (from data, or marked "est."), the unique
 angle or proof, and the hub it links to.
 
-Then three short lists:
+Then four short lists:
 
 - Refresh instead: existing posts to update rather than duplicate, with a one-line
   reason each (hand these to refresh).
 - Merge: pages competing for the same intent, with the URL that should survive.
 - Gaps in proof: planned posts that need a test, data, or story the author doesn't
   have yet.
+- Considered and cut: candidates that didn't make the plan and aren't already on
+  the refresh or merge lists, one line each with the reason ("a planned post
+  already covers it", "no angle we can back", "ranked below the cutoff on
+  demand"). Group near-duplicates on one line. "Maybe later" isn't a reason.
 
 Save the plan to `.agents/content-plan.md` unless the user said not to, so article
 and keyword-research can pick topics from it and skip what's already planned.

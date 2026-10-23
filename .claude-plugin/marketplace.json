@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Agent skills for the full blogging pipeline: research, outline, draft, humanize, optimize, publish.",
-    "version": "0.3.0"
+    "version": "0.4.0"
   },
   "plugins": [
     {
       "name": "blogging-skills",
       "source": "./",
       "description": "Agent skills that write blog content that ranks and doesn't read like AI.",
-      "version": "0.3.0"
+      "version": "0.4.0"
     }
   ]
 }

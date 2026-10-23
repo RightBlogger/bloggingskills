@@ -56,7 +56,7 @@ repurpose   youtube-to-blog  (the article pipeline applied to a video)
 
 See each skill's "Related skills" line for the full map.
 
-## Available skills (v0.3)
+## Available skills (v0.4)
 
 | Skill | What it does |
 |-------|--------------|

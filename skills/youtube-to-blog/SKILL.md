@@ -1,8 +1,8 @@
 ---
 name: youtube-to-blog
-description: "When the user wants to turn a YouTube video or its transcript into a publish-ready blog post that ranks and reads like a person wrote it, not a raw transcript dump. Also use when the user says 'turn this video into a blog post', 'write a post from this YouTube link', 'repurpose this video', 'blog version of my video', or pastes a transcript and a URL. Inputs are a video URL or transcript, a length, and whether to embed the video. For a topic or keyword instead of a video, see article. For only the human pass on existing text, see humanize."
+description: "Turns a YouTube video or transcript into a standalone, publish-ready blog post organized around the reader's question, not the video's timeline. Use when the user says 'turn this video into a blog post' or 'repurpose this video', or pastes a YouTube link or transcript. For a topic or keyword, see article."
 metadata:
-  version: 0.3.0
+  version: 0.4.0
 ---
 
 # YouTube to blog
@@ -25,10 +25,8 @@ self-check, and contains nothing the video or the user didn't support.
    `../article/references/ai-tells.md`; this skill builds on article and expects it
    installed alongside). It is the full writing contract.
 3. Get the inputs: the video URL or transcript, the length, and whether to embed the
-   video. Length tiers match the article skill: micro ~500, short ~1,000, medium
-   ~1,500, long ~2,500, very-long ~3,500, and an explicit word count wins. Land
-   within 90 to 105% of the target. Default to medium and embedding on when the user
-   doesn't say.
+   video. Length follows the [article skill's Length section](../article/SKILL.md).
+   Embedding is on unless the user says otherwise.
 
 ## Method
 
@@ -54,10 +52,10 @@ for one.
 
 ### 3. Draft section by section
 
-Follow the article skill's [section rules](../article/references/sections.md). Hold
-the running draft in mind so no point repeats. Add the context, definitions, and
-examples that went unsaid on camera, and never paraphrase the transcript line by line.
-A post that restates the video in order reads like a caption file and ranks like one.
+Draft the way the article skill's step 3 does: in order, each section opening with
+its answer, no point repeated. Add the context, definitions, and examples that went
+unsaid on camera, and never paraphrase the transcript line by line. A post that
+restates the video in order reads like a caption file and ranks like one.
 
 Attribute first-hand claims to the speaker ("In the video, Sam tests...") unless the
 user is the speaker and wants first person.

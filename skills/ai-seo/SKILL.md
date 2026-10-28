@@ -1,8 +1,8 @@
 ---
 name: ai-seo
-description: "When the user wants a post to be cited by AI search and answer engines — ChatGPT search, Perplexity, Google AI Overviews and AI Mode, Gemini, Claude. Also use when the user says 'AI SEO', 'AEO', 'GEO', 'LLM SEO', 'answer engine optimization', 'generative engine optimization', 'optimize for ChatGPT', 'optimize for Perplexity', 'AI Overviews', 'AI Mode', 'get cited by AI', 'AI citations', or 'should I add llms.txt'. Audits and edits a post so its answers are easy to lift and safe to cite, and separates what helps from what's myth. For on-page keyword optimization, see seo-optimize. For human-voice editing, see humanize. For SERP and competitor context, see serp-analysis. For an old post losing clicks to AI answers, see refresh."
+description: "Edits a blog post so AI answer engines (ChatGPT search, Perplexity, Google AI Overviews and AI Mode, Gemini, Claude) can lift and cite it, and separates what helps from myths like llms.txt. Use when the user wants a post cited by AI, says 'AI SEO', 'AEO', 'GEO', or 'optimize for ChatGPT', or asks about llms.txt or AI Overviews. For keyword-focused on-page work, see seo-optimize. For an old post losing clicks to AI answers, see refresh."
 metadata:
-  version: 0.3.0
+  version: 0.3.1
 ---
 
 # AI SEO

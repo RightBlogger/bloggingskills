@@ -1,8 +1,8 @@
 ---
 name: keyword-research
-description: "When the user wants to turn a seed topic into a keyword set for a blog post or cluster — one primary keyword plus related terms grouped by search intent. Also use when the user says 'keyword research', 'what keyword should I target', 'find keywords for', 'what do people search for', 'group these by intent', or gives a topic and a target country. For reading the live SERP and competitor pages, see serp-analysis."
+description: "Turns a seed topic into a keyword set for one post: a primary keyword with its runner-up, related terms grouped by search intent, and the questions readers ask. Use when the user says 'keyword research', 'what keyword should I target', 'find keywords for', or 'what do people search for'. For the live top results and a brief, see serp-analysis. For planning many posts, see content-plan."
 metadata:
-  version: 0.3.0
+  version: 0.4.0
 ---
 
 # Keyword research
@@ -29,11 +29,10 @@ intent with honest demand labels, the questions readers ask, and a recommended a
 
 ## Treat a keyword as a concept, not a string
 
-A keyword is the idea a reader is searching for, not a fixed run of characters to
-repeat. The writer will inflect it, reorder it, and weave it into sentences later.
-"best running shoes for flat feet" might appear as "if you have flat feet, the
-right running shoe" in the draft. Research the concept and the intent behind it.
-Never hand off a phrase to be stuffed verbatim.
+A keyword is the idea a reader is searching for. The writer will inflect and
+reorder it: "best running shoes for flat feet" might appear as "if you have flat
+feet, the right running shoe." Research the concept and the intent behind it, and
+hand off ideas, not strings to paste verbatim.
 
 ## Method
 
@@ -43,20 +42,16 @@ Never hand off a phrase to be stuffed verbatim.
    three candidates side by side before you choose, and keep the runner-up with
    the reason it lost. Writing the comparison down stops the pick from defaulting
    to whichever term has the biggest number.
-2. Group related terms by search intent. Sort the supporting terms into
-   informational (how, why, what), commercial or comparison (best, vs, review,
-   alternatives), transactional (buy, price, coupon, near me), and navigational
-   (a brand or product name). This grouping is what tells the writer which
-   sections the post needs.
+2. Group related terms by search intent: informational, commercial, transactional,
+   and navigational. The grouping tells the writer which sections the post needs.
 3. Surface the real questions. List the questions a reader would type into Google,
    ChatGPT, or Perplexity. Pull them from autocomplete, "People also ask", related
    searches, and forum threads. Include the follow-up questions a person would ask
    next; AI search engines run those sub-queries too, and covering them inside one
    page is how a post gets cited for more than its headline query. These become
    headings, section leads, or an FAQ.
-4. Note competitiveness and volume qualitatively. You do not need exact numbers.
-   Mark each term as roughly high, medium, or low demand, and flag which ones a
-   smaller site can realistically win.
+4. Without exact numbers, mark each term as roughly high, medium, or low demand,
+   and flag which ones a smaller site can realistically win.
 5. Flag click risk. Quick definitions, conversions, and simple facts are usually
    answered on the results page by an AI Overview, so they bring few visits even at
    position one. Favor queries where the reader needs to compare, decide, or follow
@@ -87,8 +82,6 @@ Return, as plain prose and short lists:
   with rough demand and, where it applies, click risk.
 - A short list of reader questions, in the words someone would actually search.
 - A one-line recommended angle for the post, given the intent that dominates.
-
-Keep it scannable. This feeds straight into serp-analysis and the article draft.
 
 ## Related skills
 

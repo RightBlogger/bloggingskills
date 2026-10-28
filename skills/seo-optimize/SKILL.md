@@ -1,8 +1,8 @@
 ---
 name: seo-optimize
-description: "When the user wants to optimize an existing draft or published post for a target keyword, improve on-page relevance, or rework a piece around what readers actually search. Also use when the user says 'optimize this for SEO', 'rank for [keyword]', 'make this post more findable', 'make this rank better', 'help me with SEO', 'add my keyword to this', or pastes a draft or URL with a keyword in mind. This is an optimization pass on content that already exists. For writing a new post from scratch, see article. For meta titles and descriptions, see meta. For internal linking, see internal-links. For AI-answer citability, see ai-seo."
+description: "Tunes an existing draft or published post around one target keyword so its title, opening, and headings match what searchers want, without stuffing. Use when the user says 'optimize this for SEO', 'rank for [keyword]', 'make this more findable', 'make this rank better', or 'help me with SEO' about content that exists. For a new post, see article. For a post losing traffic, see refresh. For meta fields, see meta. For AI citations, see ai-seo."
 metadata:
-  version: 0.2.0
+  version: 0.3.0
 ---
 
 # SEO optimize
@@ -13,7 +13,7 @@ writing from scratch, and you never stuff keywords. Readability wins every time.
 
 You're done when the title and opening match what the searcher typed, the headings
 cover the intent, the related questions are answered, no sentence exists only to hold
-a keyword, and the author's argument and voice are intact.
+a keyword, and the author's facts, argument, and voice are intact.
 
 ## Initial assessment
 
@@ -59,14 +59,10 @@ a keyword, and the author's argument and voice are intact.
 
 ## Hard rules
 
-- Readability and natural language come first, always. A keyword that hurts the
-  sentence loses.
-- Do not keyword-stuff. Do not repeat the target to hit a count.
-- Do not mention SEO, keywords, search intent, or strategy anywhere in the post.
-  The reader sees an article, not the machinery behind it. The notes below the post
-  are for the author, so plain talk about keywords is fine there.
-- Preserve the author's argument, facts, and voice. You change how findable it is,
-  not what it says.
+- A keyword that hurts the sentence loses. Never repeat the target to hit a count.
+- Keep SEO, keywords, search intent, and strategy out of the post itself. The reader
+  sees an article, not the machinery behind it. The notes below the post are for the
+  author, so plain talk about keywords is fine there.
 - Optimize this one page. Never propose near-duplicate pages for keyword variations;
   that's scaled content abuse and it splits the page's strength.
 - Don't change the URL of a published post unless the user asks; if they do, they

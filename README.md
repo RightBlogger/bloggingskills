@@ -1,6 +1,24 @@
+<div align="center">
+
+<img src="docs/images/logo.png" width="88" alt="Blogging Skills logo">
+
 # Blogging Skills
 
 Agent skills that write blog content which ranks and doesn't read like AI.
+
+[![version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FRightBlogger%2Fbloggingskills%2Fmain%2F.claude-plugin%2Fplugin.json&query=%24.version&label=version&color=9ae600)](VERSIONS.md) [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-spec-1a1a1a)](https://agentskills.io) [![license](https://img.shields.io/github/license/RightBlogger/bloggingskills?color=1a1a1a)](LICENSE)
+
+[bloggingskills.com](https://bloggingskills.com) · [skills.sh](https://www.skills.sh/rightblogger/bloggingskills) · [Install](#installation)
+
+<img src="docs/images/before-after.jpg" alt="A typical model paragraph with eight AI tells highlighted, next to the same claim rewritten by the humanize skill" width="100%">
+
+<sub>A typical model paragraph before and after <code>humanize</code>. The claim stays. The tells go.</sub>
+
+</div>
+
+```bash
+npx skills add RightBlogger/bloggingskills
+```
 
 A collection of [Agent Skills](https://agentskills.io) for the full blogging
 pipeline: research, outline, draft, humanize, optimize, publish. Built for people
@@ -32,31 +50,31 @@ doing that task and applies the right method. You can also call one directly, li
 
 ## How the skills work together
 
-Two foundation skills are read first by everything else. Then the pipeline runs.
+Three foundation skills hold the context and rules every other skill reads first.
+`article` runs its own humanize pass; `humanize` also works on any draft you bring.
+`refresh` brings decaying posts back into the pipeline.
 
+```mermaid
+flowchart LR
+    F["<b>Foundation</b><br/>blog-context<br/>brand-voice<br/>house-style"]
+    P["<b>Plan</b><br/>content-plan"]
+    R["<b>Research</b><br/>keyword-research<br/>serp-analysis"]
+    A["<b>Write</b><br/>article"]
+    Y["youtube-to-blog"]
+    H["humanize"]
+    O["<b>Optimize</b><br/>seo-optimize<br/>internal-links<br/>meta<br/>ai-seo"]
+    C[("Your CMS")]
+    RF["<b>Maintain</b><br/>refresh"]
+
+    F -.-> P --> R --> A --> O --> C
+    Y --> A
+    H --> O
+    C -- decays --> RF --> O
 ```
-foundation   blog-context   +   house-style        (read by every skill)
-                 |                    |
-                 |   captures niche,  |   the anti-slop rulebook every
-                 |   audience, voice  |   writing skill loads before drafting
-                 v                    v
 
-pipeline
-  plan        content-plan     (what to write next, without cannibalizing)
-  research    keyword-research, serp-analysis
-    -> outline    article  (references/outline.md)
-    -> draft      article  (section by section, no redundancy)
-    -> humanize   humanize          <-- the differentiator
-    -> optimize   seo-optimize, internal-links, meta, ai-seo
-    -> publish    your CMS
+Each skill's "Related skills" line has the full map.
 
-maintain    refresh          (diagnose and fix posts that are decaying)
-repurpose   youtube-to-blog  (the article pipeline applied to a video)
-```
-
-See each skill's "Related skills" line for the full map.
-
-## Available skills (v0.4)
+## Available skills (v0.5)
 
 | Skill | What it does |
 |-------|--------------|
@@ -148,9 +166,6 @@ Once installed, just ask:
 ```
 
 Or call a skill directly: `/article`, `/humanize`, `/seo-optimize`.
-
-The first thing to run is `blog-context`. Every other skill reads it, so you only
-explain your blog once.
 
 ## Roadmap
 

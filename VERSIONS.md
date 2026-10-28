@@ -3,24 +3,43 @@
 The canonical version table. Each skill carries its own `metadata.version`. The repo
 version tracks the collection as a whole.
 
-Repo version: 0.4.0
+Repo version: 0.5.0
 
 | Skill | Version |
 |-------|---------|
-| blog-context | 0.2.0 |
-| brand-voice | 0.2.0 |
-| house-style | 0.2.0 |
-| content-plan | 0.2.0 |
-| keyword-research | 0.3.0 |
-| serp-analysis | 0.3.0 |
-| article | 0.4.0 |
-| humanize | 0.2.0 |
-| seo-optimize | 0.2.0 |
-| refresh | 0.3.0 |
-| internal-links | 0.2.0 |
-| meta | 0.3.0 |
-| ai-seo | 0.3.0 |
-| youtube-to-blog | 0.3.0 |
+| blog-context | 0.2.1 |
+| brand-voice | 0.2.1 |
+| house-style | 0.3.0 |
+| content-plan | 0.2.1 |
+| keyword-research | 0.4.0 |
+| serp-analysis | 0.4.0 |
+| article | 0.5.0 |
+| humanize | 0.3.0 |
+| seo-optimize | 0.3.0 |
+| refresh | 0.3.1 |
+| internal-links | 0.3.0 |
+| meta | 0.4.0 |
+| ai-seo | 0.3.1 |
+| youtube-to-blog | 0.4.0 |
+
+## 0.5.0
+
+- Descriptions rewritten to current skill-authoring guidance: third person, the use
+  case first, one trigger phrase per distinct request, scope boundaries kept. The
+  always-loaded description text drops by about a third (8,262 to 5,650 characters).
+- Pruned rules that were stated twice. `article/references/sections.md` is gone:
+  its intro, conclusion, and FAQ rules moved into the rulebook, and its section
+  rule now sits in article's drafting step. `youtube-to-blog` points to article's
+  length tiers instead of copying them. `meta`, `humanize`, and `internal-links`
+  point to the rulebook instead of restating it, and `seo-optimize` trims its hard
+  rules to the ones stated nowhere else.
+- The rulebook's Links section adds "learn more" to the banned anchors, and the
+  conclusion is specified as an H2.
+- Cut lines that don't change behavior (intent definitions, "keep it scannable",
+  hand-off notes the descriptions already carry) and dated facts in `meta`.
+- `house-style` gains a "done when" line. The rulebook opens with a contents line.
+- AGENTS.md: description rules, a no-op test, a contents line for long references,
+  and a corrected note on how models handle conflicting rules.
 
 ## 0.4.0
 

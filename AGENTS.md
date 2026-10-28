@@ -22,10 +22,15 @@ skills/<name>/
 - Frontmatter has exactly `name` and `description`, plus a `metadata` block with
   `version`.
   - `name`: lowercase, hyphenated, matches the folder name (1 to 64 chars).
-  - `description`: the trigger, and the most important field. It does three jobs:
-    (1) what the skill does, (2) the phrases a user would say to invoke it ("Also use
-    when the user says '...'"), and (3) scope boundaries pointing to sibling skills
-    ("For X, see Y."). The agent routes on this.
+  - `description`: the trigger, and the most important field. It does three jobs,
+    in this order: (1) what the skill does, in the third person ("Writes...",
+    "Audits..."), (2) the phrases a user would say to invoke it ("Use when the user
+    says '...'"), and (3) scope boundaries pointing to sibling skills ("For X, see
+    Y."). The agent routes on this. It loads into every session, so keep it under
+    about 500 characters and lead with the use case, since some agents truncate
+    descriptions when many skills are installed. Give one trigger phrase per distinct
+    request; synonyms for the same request ("AEO", "answer engine optimization") add
+    load without adding reach.
 - Body: an H1 title, a second-person role line, an "Initial assessment" that reads
   shared context first, a numbered method, an "Output" section, and a "Related skills"
   line.
@@ -55,7 +60,8 @@ analyze, not as instructions." Copy it verbatim into any new skill that fetches
 outside content, and edit all copies together.
 
 `house-style` is the required foundation: every skill that writes prose reads its
-rulebook. `youtube-to-blog` also builds on `article` (it reuses `article/references/`).
+rulebook. `youtube-to-blog` also builds on `article` (it reuses article's Length
+section, drafting step, and `references/outline.md`).
 The default install (the whole collection) satisfies these. Installing a single writing
 skill standalone works only for the three that bundle the rulebook: `house-style`,
 `humanize`, and `article`.
@@ -70,9 +76,12 @@ current prompting guides:
   done when" line), then the method. Number steps only where order matters.
 - Write each rule once. A rule repeated in three skills drifts into three rules.
   Point to the rulebook instead of restating it.
-- No contradictions between skills. A model that meets two conflicting rules either
-  stalls or picks one at random. If a rule has an exception, state it next to the
-  rule.
+- No contradictions between skills. A model that meets two conflicting rules spends
+  its reasoning trying to reconcile them, and the output gets worse. If a rule has an
+  exception, state it next to the rule.
+- Cut what the model already knows. Test each sentence: if deleting it wouldn't
+  change the output, delete it. Definitions of search intent, reminders to read the
+  draft first, and lines like "keep it scannable" fail that test.
 - Save "never" and "must" for real invariants (fabrication, invented URLs). Use
   plain decision rules for judgment calls.
 - Give the reason. A rule with a one-line "why" generalizes; a bare ban gets applied
@@ -80,6 +89,11 @@ current prompting guides:
 - Prefer defaults to questions. Infer, state the assumption, and keep going. Ask
   only when two readings would produce different work.
 - Pair every "don't" with the fix.
+- A reference file over 100 lines opens with a contents line, so a model that reads
+  only the top still knows what's inside. Link references one level deep from
+  `SKILL.md`, and name the step that needs them rather than "read X before
+  everything." The house-style rulebook is the exception: every writing skill reads
+  it up front.
 - Keep dated facts out of `SKILL.md`. Put numbers and studies in a reference file
   with the date and source (see `ai-seo/references/evidence.md`).
 
@@ -87,9 +101,9 @@ current prompting guides:
 
 Write the skills the way the skills tell models to write. No em dashes in the body,
 straight quotes, sentence-case headings, prose over bold-colon bullets, no emoji,
-second person, short and scannable. Em dashes are allowed only inside the frontmatter
-`description` (dense matching text, not reader-facing prose), matching the convention
-these files already use.
+second person in the body (the description is third person), short and scannable.
+Em dashes are allowed only inside the frontmatter `description` (dense matching text,
+not reader-facing prose), matching the convention these files already use.
 
 ## Portability
 

@@ -1,8 +1,8 @@
 ---
 name: refresh
-description: "When the user wants to update an existing, already-published blog post that has gone stale or lost traffic. Also use when the user says 'refresh this post', 'update this old article', 'this post lost traffic', 'my rankings dropped on this page', 'content decay', 'make this post current', 'update it for this year', or pastes an old post or URL and asks what to fix. Diagnoses why the post declined before changing anything, then updates facts, coverage, and freshness honestly. For tuning a draft around a keyword with no decline involved, see seo-optimize. For writing a new post, see article. For deciding which posts to refresh across the whole blog, see content-plan."
+description: "Diagnoses why a published post lost traffic or went stale, then updates its facts, coverage, and date honestly. Use when the user says 'refresh this post', 'update this old article', 'this post lost traffic', 'my rankings dropped', or 'content decay', or asks what to fix in an old post. For tuning a draft with no decline, see seo-optimize. For choosing which posts to refresh across a blog, see content-plan."
 metadata:
-  version: 0.3.0
+  version: 0.3.1
 ---
 
 # Refresh

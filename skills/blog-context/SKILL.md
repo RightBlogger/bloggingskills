@@ -1,8 +1,8 @@
 ---
 name: blog-context
-description: "When the user wants to set up or update the foundational context for their blog — niche, audience, topic pillars, authors and their real experience, CMS, and writing voice — so every other skill stops re-asking. Also use when the user says 'set up my blog', 'blog context', 'who is my audience', 'connect my site', 'my writing voice', or is starting with this collection for the first time. Creates .agents/blog-context.md, which every other blogging skill reads first. For deciding what to write next, see content-plan. For a one-off keyword list, see keyword-research. For capturing a voice from writing samples, see brand-voice."
+description: "Creates and maintains .agents/blog-context.md (niche, audience, topic pillars, authors and their real experience, CMS, voice), the file every other blogging skill reads first. Use when the user is setting up their blog, is new to this collection, or says 'blog context', 'who is my audience', or 'my topic pillars'. For capturing a voice from writing samples, see brand-voice. For deciding what to write next, see content-plan."
 metadata:
-  version: 0.2.0
+  version: 0.2.1
 ---
 
 # Blog context

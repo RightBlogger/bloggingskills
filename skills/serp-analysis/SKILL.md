@@ -1,8 +1,8 @@
 ---
 name: serp-analysis
-description: "When the user wants to know what it takes to rank for a target keyword by reading the live top results and turning them into a content brief. Also use when the user says 'analyze the SERP', 'what's ranking for', 'check the competition for this keyword', 'what do I need to cover to rank', 'size up the top results', or gives a URL to analyze against the keyword it targets. For turning a seed topic into a keyword set, see keyword-research. For optimizing an existing draft against the results, see seo-optimize."
+description: "Reads the live top results and AI answer for one keyword and returns a brief: dominant intent, must-cover subtopics, the gap, and the angle to win. Use when the user says 'analyze the SERP', 'what's ranking for', 'check the competition', or 'what do I need to cover to rank', or gives a URL to analyze against its keyword. For a keyword set from a seed topic, see keyword-research. For optimizing an existing draft, see seo-optimize."
 metadata:
-  version: 0.3.0
+  version: 0.4.0
 ---
 
 # SERP analysis
@@ -86,10 +86,6 @@ Return a short brief in plain prose and tight lists:
   often beats a longer one.
 - The single sharpest angle to win, stated as the editorial promise of the piece,
   plus the runner-up angle and one line on why it lost.
-
-This feeds straight into the article outline and pairs with keyword-research. For
-tuning a draft you already have against the live results, hand off to
-seo-optimize.
 
 ## Related skills
 

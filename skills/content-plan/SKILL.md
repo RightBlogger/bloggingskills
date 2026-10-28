@@ -1,8 +1,8 @@
 ---
 name: content-plan
-description: "When the user wants to decide what to write next, plan a batch of posts, or organize a blog into topic clusters without the posts competing with each other. Also use when the user says 'what should I write about', 'content plan', 'content calendar', 'blog topic ideas', 'topic clusters', 'plan my next 10 posts', 'content strategy for my blog', 'am I cannibalizing my own posts', or 'which old posts should I update'. Returns a prioritized list of posts, each with one keyword, one intent, and the angle only this blog can bring. For the keyword set behind a single post, see keyword-research. For writing a planned post, see article. For updating one decaying post, see refresh."
+description: "Plans what a blog should publish next: a ranked list of posts, each with one keyword, one intent, a pillar, and an angle only this blog can back, plus lists of posts to refresh, merge, or cut. Use when the user asks what to write about, wants a content plan, calendar, or topic clusters, asks which old posts to update, or asks whether their posts cannibalize each other. For one post's keyword set, see keyword-research. For updating one decaying post, see refresh."
 metadata:
-  version: 0.2.0
+  version: 0.2.1
 ---
 
 # Content plan

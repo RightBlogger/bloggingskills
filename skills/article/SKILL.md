@@ -1,8 +1,8 @@
 ---
 name: article
-description: "When the user wants to write a complete, publish-ready blog post or article from a topic or keyword. Also use when the user says 'write a blog post', 'write an article about X', 'draft a post on', 'I need a 2000-word article', 'turn this keyword into a post', or gives a topic and a target length. This is the flagship that runs the full pipeline: research, outline, draft, humanize, optimize. For a video transcript instead of a topic, see youtube-to-blog. For optimizing a draft that already exists, see seo-optimize. For updating an old post, see refresh. For only humanizing existing text, see humanize."
+description: "Writes a complete, publish-ready blog post from a topic or keyword, running research, outline, section-by-section drafting, a humanize pass, and meta. Use when the user says 'write a blog post', 'write an article about X', or 'draft a post on', or gives a topic and a target length. For a video or transcript, see youtube-to-blog. For a draft that already exists, see seo-optimize, refresh, or humanize."
 metadata:
-  version: 0.4.0
+  version: 0.5.0
 ---
 
 # Article
@@ -38,8 +38,9 @@ Tiers: micro ~500 · short ~1,000 · medium ~1,500 · long ~2,500 · very-long ~
 
 An explicit word count wins over a tier label ("a short 700-word post" means 700).
 With no length given, pick the tier serp-analysis recommends, or medium. Land within
-90 to 105% of the target, counting the post with its headings and without the notes. Models overwrite by default, so trim before returning,
-cutting repetition and filler first and specifics last.
+90 to 105% of the target, counting the post with its headings and without the notes.
+Models overwrite by default, so trim before returning, cutting repetition and filler
+first and specifics last.
 
 ## The pipeline
 
@@ -69,10 +70,11 @@ asked for a checkpoint, stop here and show the outline.
 
 ### 3. Draft section by section
 
-Follow [references/sections.md](references/sections.md). Write sections in order and
-hold the running draft in mind so no point repeats. Open each section with its
-answer, then support it. Treat the keyword as a concept: inflect and reorder it so
-every mention reads as natural prose.
+Write sections in order and hold the running draft in mind so no point repeats.
+Open each section with its answer in one or two sentences that make sense out of
+context, then support it; that opening is what skimmers read and AI answers quote.
+The intro, conclusion, and FAQ follow the rulebook's sections for them. Treat the
+keyword as a concept: inflect and reorder it so every mention reads as natural prose.
 
 Use first-hand experience, data, and examples only from the user, the context file,
 or a source you can name. Where a real detail would make a section stronger and you

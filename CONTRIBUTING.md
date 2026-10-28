@@ -14,8 +14,9 @@ authoring contract.
 ## Adding a skill
 
 1. Create `skills/<name>/SKILL.md` with the frontmatter contract in AGENTS.md.
-2. Make the `description` specific: what it does, the trigger phrases, and the scope
-   boundaries to sibling skills.
+2. Write the `description` to the rules in AGENTS.md: third person, what it does
+   first, one trigger phrase per distinct request, and the scope boundaries to
+   sibling skills.
 3. Have its "Initial assessment" read `.agents/blog-context.md` and, if it writes
    prose, the house-style rulebook.
 4. Add it to the table in `README.md` and to `VERSIONS.md`.

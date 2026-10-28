@@ -1,8 +1,8 @@
 ---
 name: meta
-description: "Writes the SERP-facing metadata for a post: the meta title, meta description, and URL permalink, plus the lead image tags and a minimal Article JSON-LD that decide the thumbnail in Discover and AI answers, from the post (or topic) plus the primary keyword. Use when the user says 'write the meta', 'meta title and description', 'SEO title', 'permalink', 'URL slug', 'snippet for Google', 'og:image', 'Discover', 'article schema', or asks what shows up in search results before the click. For the full post, see article. For the human-voice pass, see humanize. For on-page keyword work, see seo-optimize."
+description: "Writes a post's search-facing metadata: meta title, meta description, URL slug, lead image tags, and a minimal Article JSON-LD. Use when the user asks for the meta, an SEO title, a slug or permalink, og:image, article schema, what shows in search results before the click, or Google Discover thumbnails. For on-page keyword work, see seo-optimize."
 metadata:
-  version: 0.3.0
+  version: 0.4.0
 ---
 
 # Meta
@@ -21,7 +21,7 @@ something the post actually delivers, and passes the rulebook's hard rules.
 
 - If `.agents/blog-context.md` exists, read it. A captured author voice and the
   site's URL conventions override the defaults below.
-- Read the hard rules in the house-style rulebook at
+- Read the hard rules and the Titles section of the house-style rulebook at
   `../house-style/references/ai-tells.md`. Every field has to pass them.
 - Get the primary keyword. If the user did not give one, read it off the post's H1
   and first paragraph and say which one you used. If Search Console data is
@@ -48,13 +48,12 @@ When a field holds alternatives (two prices, several options, a range), put the
 value the site most wants quoted first. Skimmers and AI answers take the first
 number or name they see. Write plain language a 12-year-old would follow.
 
-No dashes. Never use an em dash or an en dash in any field. Models reach for them
-to cram two ideas into a short line. Use a comma, a colon, or two short phrases
-instead. A plain hyphen inside a compound word is fine.
+Metadata attracts its own filler on top of the rulebook's title molds: "comprehensive
+guide," "discover," "learn how." Both sets apply to every field, not only the title.
+Say what the page gives the reader.
 
-No filler molds. Metadata attracts its own: "comprehensive guide," "ultimate guide,"
-"everything you need to know," "the only X you'll ever need," "discover," "learn
-how." Say what the page gives the reader.
+No em or en dashes in any field; a comma or colon does the same job. A hyphen inside
+a compound word is fine.
 
 ## Field caps
 
@@ -75,8 +74,8 @@ headroom.
 ## Image and structured data
 
 Google Discover and AI answers show a thumbnail, and Google picks it from `og:image`
-and the page's image markup. Discover's 2026 core update also demotes clickbait and
-favors original, in-depth posts, so the title rules above apply to `og:title` too.
+and the page's image markup. Discover demotes clickbait and favors original,
+in-depth posts, so the title rules above apply to `og:title` too.
 
 - `og:image`: the post's lead image, at least 1200px wide. The author's own photo or
   screenshot beats stock, since Discover rewards original work. Use only a real image

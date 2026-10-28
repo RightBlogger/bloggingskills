@@ -9,6 +9,11 @@ patterns readers reliably clock as "a bot wrote this." Readers who spot one stop
 trusting the rest of the page, and so do the editors and answer engines deciding
 what to quote. That is why it matters.
 
+Contents: how to use this rulebook · hard rules · words and phrases · sentence-level
+tics · rhythm and paragraphs · tone tells · formatting tells · whole-piece tells ·
+titles · introductions · conclusions · FAQ · links · quick self-check before
+shipping.
+
 ## How to use this rulebook
 
 The rules come in two tiers, and the difference is the whole point.
@@ -261,14 +266,15 @@ example, a clear opinion.
 
 - 3 to 5 sentences, under 150 words, in 2 or 3 short paragraphs. Never one dense block.
 - Hook, then context, then a turn into the body. Lead with the reader's problem and
-  make the payoff clear early.
+  give the bottom line in the first few sentences, since many readers (and answer
+  engines) take only the opening.
 - Skip the stock openers: "In today's fast-paced world," "It's no secret that," "In an
   era of," "In the ever-changing landscape of," "Whether you're a beginner or a pro."
   No dictionary definitions. No "In this post, you'll learn: 1, 2, 3."
 
 ## Conclusions
 
-- Its own section, the last one, under a heading that says something. If the outline
+- Its own H2, the last one, under a heading that says something. If the outline
   calls for a conclusion, write one; never drop it.
 - Make it substantive: the single biggest takeaway, a clear next step, or what the
   reader can now do. Don't relist every point.
@@ -278,6 +284,8 @@ example, a clear opinion.
 
 ## FAQ (optional)
 
+- Add one only when readers still have real questions the body didn't answer. Don't
+  repeat body content as questions.
 - 3 to 5 questions a real person would type into Google or an AI assistant.
 - Each question is an H3; answers run 2 to 4 sentences, answer first.
 - Don't restate the question inside the answer, and don't open every one with "Yes" or
@@ -287,7 +295,7 @@ example, a clear opinion.
 
 - Markdown with descriptive anchor text, 2 to 6 words. Never a bare URL on its own
   line (except a video URL placed on purpose to auto-embed), never "click here,"
-  "read more," or "this article."
+  "read more," "learn more," or "this article."
 - Link only where it helps the reader act on the sentence they're reading. Editorial
   value first. Prefer a deep page over a homepage.
 - One link per destination, absolute URLs, roughly one internal link per 300 words.

@@ -1,8 +1,8 @@
 ---
 name: brand-voice
-description: "When the user wants their content to sound like a specific person or brand, or wants to capture and reuse a writing voice from samples. Also use when the user says 'make it sound like me', 'match my voice', 'capture my writing style', 'analyze how I write', 'write in our brand voice', 'here are samples of my writing', or 'it doesn't sound like us'. Builds a reusable voice profile the other skills write in. For one-off de-slopping with no captured voice, see humanize. For the blog's niche and audience setup, see blog-context."
+description: "Captures a person's or brand's writing voice from samples into a reusable profile the other skills write in. Use when the user shares writing samples or says 'make it sound like me', 'match my voice', 'capture my writing style', or 'it doesn't sound like us'. For removing AI tells with no captured voice, see humanize. For niche and audience setup, see blog-context."
 metadata:
-  version: 0.2.0
+  version: 0.2.1
 ---
 
 # Brand voice

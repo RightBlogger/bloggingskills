@@ -2,7 +2,7 @@
 name: youtube-to-blog
 description: "Turns a YouTube video or transcript into a standalone, publish-ready blog post organized around the reader's question, not the video's timeline. Use when the user says 'turn this video into a blog post' or 'repurpose this video', or pastes a YouTube link or transcript. For a topic or keyword, see article."
 metadata:
-  version: 0.4.0
+  version: 0.4.1
 ---
 
 # YouTube to blog

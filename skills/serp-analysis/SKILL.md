@@ -2,7 +2,7 @@
 name: serp-analysis
 description: "Reads the live top results and AI answer for one keyword and returns a brief: dominant intent, must-cover subtopics, the gap, and the angle to win. Use when the user says 'analyze the SERP', 'what's ranking for', 'check the competition', or 'what do I need to cover to rank', or gives a URL to analyze against its keyword. For a keyword set from a seed topic, see keyword-research. For optimizing an existing draft, see seo-optimize."
 metadata:
-  version: 0.4.0
+  version: 0.4.1
 ---
 
 # SERP analysis
@@ -36,7 +36,7 @@ marked as inferred.
 ## Method
 
 1. Pull the top five organic results. Skip ads and skip pure aggregators unless
-   they genuinely compete. Note who ranks: the kind of site, not just the URL,
+   they compete. Note who ranks: the kind of site, not just the URL,
    since a forum thread and a vendor guide signal very different things.
    Fetch and read the pages themselves when you can, not only their titles.
 2. Read the rest of the page. Note whether an AI Overview or AI Mode answer
@@ -67,7 +67,7 @@ marked as inferred.
 
 Matching the leaders point for point earns you a page that is merely as good as
 what already ranks, which is rarely enough to overtake it. Cover the table stakes
-so you are in the race, then win on the gap. One genuine advantage beats adding a
+so you are in the race, then win on the gap. One real advantage beats adding a
 tenth heading nobody asked for: first-hand testing, real numbers, a clearer
 walkthrough, a more honest comparison.
 

@@ -2,7 +2,7 @@
 name: refresh
 description: "Diagnoses why a published post lost traffic or went stale, then updates its facts, coverage, and date honestly. Use when the user says 'refresh this post', 'update this old article', 'this post lost traffic', 'my rankings dropped', or 'content decay', or asks what to fix in an old post. For tuning a draft with no decline, see seo-optimize. For choosing which posts to refresh across a blog, see content-plan."
 metadata:
-  version: 0.3.1
+  version: 0.3.2
 ---
 
 # Refresh
@@ -91,7 +91,7 @@ keep the section and heading that answer it.
 
 Update the "last updated" date only when the content changed in substance. Bumping
 the date on an unchanged post misleads readers and search engines. Keep a year in the
-title only if the content is truly year-specific, and then set it to the year of
+title only if the content is year-specific, and then set it to the year of
 this update.
 
 ## Output

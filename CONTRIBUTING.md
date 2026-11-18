@@ -28,7 +28,10 @@ Run `python3 scripts/validate.py` before opening a PR. It checks structure, body
 hygiene, cross-references, the bundled `ai-tells.md` sync, and the manifests. The
 intended routing for common prompts lives in `tests/routing-cases.json`; add a case
 when you add a skill, and re-check routing (have an agent pick a skill for each prompt
-using only the descriptions) when you change a trigger.
+using only the descriptions) when you change a trigger. Cases with `"expect": null`
+are near misses where no skill should fire; keep a few, since a description that
+fires on everything is a regression nobody notices by hand. Run each prompt about
+three times, because routing isn't deterministic.
 
 ## The bar
 

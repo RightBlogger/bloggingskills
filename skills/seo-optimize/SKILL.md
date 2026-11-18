@@ -2,7 +2,7 @@
 name: seo-optimize
 description: "Tunes an existing draft or published post around one target keyword so its title, opening, and headings match what searchers want, without stuffing. Use when the user says 'optimize this for SEO', 'rank for [keyword]', 'make this more findable', 'make this rank better', or 'help me with SEO' about content that exists. For a new post, see article. For a post losing traffic, see refresh. For meta fields, see meta. For AI citations, see ai-seo."
 metadata:
-  version: 0.3.0
+  version: 0.3.1
 ---
 
 # SEO optimize
@@ -47,7 +47,7 @@ a keyword, and the author's facts, argument, and voice are intact.
      force the exact string where a natural phrasing reads better.
    - Answer the main question in the first few sentences, and open each section
      with its point. That opening is what skimmers and answer engines take.
-   - Weave in only the related terms that are genuinely missing, and only where they
+   - Weave in only the related terms that are missing, and only where they
      read as something a person would write.
    - Make every heading descriptive so the set covers the search intent. Replace
      generic headings that earn nothing.

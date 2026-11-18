@@ -2,7 +2,7 @@
 name: brand-voice
 description: "Captures a person's or brand's writing voice from samples into a reusable profile the other skills write in. Use when the user shares writing samples or says 'make it sound like me', 'match my voice', 'capture my writing style', or 'it doesn't sound like us'. For removing AI tells with no captured voice, see humanize. For niche and audience setup, see blog-context."
 metadata:
-  version: 0.2.1
+  version: 0.3.0
 ---
 
 # Brand voice
@@ -22,7 +22,11 @@ read it.
   belongs; update it rather than starting a parallel file. For more than one author,
   use `.agents/voice-<name>.md` and note which posts use which.
 - Get samples. Ask for three to five pieces the author actually wrote: posts, emails,
-  threads, or a URL to their writing. More and longer is better. Without samples you
+  threads, or a URL to their writing. More and longer is better, and varied beats
+  similar: pieces on different topics and in different formats leave the voice as the
+  only thing they share. Models copy whatever samples have in common, so five posts
+  on one topic teach the topic, and a phrase that appears in two samples gets
+  mistaken for a signature. Without samples you
   can't capture a voice, so don't invent one. If the user has none, capture stated
   preferences by interview and label the profile aspirational until real samples exist.
 - Check you have enough. Count the words you actually have. Under about 400, capture only
@@ -55,8 +59,16 @@ read it.
    - Structure: how they open, how they transition, how they land an ending.
    - Punctuation habits: dashes, parentheses, lists, emphasis. Note what they actually
      do, even when it breaks a generic rule.
-3. Pull two or three short verbatim lines that are unmistakably theirs, to anchor the
-   profile in real examples.
+3. Pull two or three short verbatim lines that are unmistakably theirs, each from a
+   different sample, to anchor the profile in real examples. Pick lines whose move
+   would work on any topic. A line that only lands because of a fact about the
+   author ("Not the dishwasher" only works if they washed dishes somewhere) shows
+   the move but invites imitation of the fact; put that fact in "Experience and
+   proof" and choose a different anchor. A sample beats any
+   adjective: writing skills imitate these lines far more reliably than they follow
+   "conversational" or "witty."
+4. If the author writes in clearly different modes (long posts versus short social
+   posts, say), note per trait which mode it belongs to rather than averaging them.
 
 ## Output
 
@@ -66,7 +78,7 @@ the Voice section, leaving the other sections as bracketed prompts for blog-cont
 complete later. For more than one author, write `.agents/voice-<name>.md`. The Voice
 section holds:
 
-- As many copyable traits as the samples genuinely support (up to ten; fewer is fine for
+- As many copyable traits as the samples support (up to ten; fewer is fine for
   thin samples), each with a one-line do and a tiny example. For instance: "Opens with a
   blunt claim, not a windup. Do: 'Most cold brew advice is wrong.' Not: 'Cold brew has
   become increasingly popular.'"
@@ -78,7 +90,8 @@ section holds:
   conflict." Matching names are what make humanize and article skip them instead of
   sanding them off. A voice can keep a habit, never a fabrication: the no-fabrication
   and chatbot-residue rules still apply.
-- The two or three verbatim anchor lines.
+- The two or three verbatim anchor lines, with the note "Imitate the move, never
+  reuse the line," so writing skills don't paste them into every post.
 
 Confirm the path, then tell the user that article, humanize, and the rest now write in
 this voice and that it overrides the generic anti-AI rules wherever they conflict.

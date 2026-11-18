@@ -94,6 +94,16 @@ current prompting guides:
   `SKILL.md`, and name the step that needs them rather than "read X before
   everything." The house-style rulebook is the exception: every writing skill reads
   it up front.
+- Describe the target, not a numeric limit, for prose style. Current models follow
+  style rules literally, so "sentences under 20 words" yields choppy prose. Say who
+  reads it and what good looks like, and give numbers only as rough guides.
+- A sample beats an adjective. Models imitate examples far more closely than they
+  follow "conversational" or "punchy," and they copy everything the examples share,
+  so pick samples that differ in everything except the thing you want copied.
+- Fix shape before words. A post's structure (a roadmap paragraph, a recap, a close
+  that restates the opening) gives it away more reliably than its vocabulary, and
+  rewording leaves structure intact. The rulebook's "tidy,
+  self-announcing post" section is the reference.
 - Keep dated facts out of `SKILL.md`. Put numbers and studies in a reference file
   with the date and source (see `ai-seo/references/evidence.md`).
 

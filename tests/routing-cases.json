@@ -36,5 +36,11 @@
   {"prompt": "This post from 2023 lost half its traffic, fix it", "expect": "refresh"},
   {"prompt": "Update this old article so it's current", "expect": "refresh"},
   {"prompt": "Should I add an llms.txt file to get cited by ChatGPT?", "expect": "ai-seo"},
-  {"prompt": "Audit this draft against our style rules but don't rewrite it", "expect": "house-style"}
+  {"prompt": "Audit this draft against our style rules but don't rewrite it", "expect": "house-style"},
+  {"prompt": "Write a cold email to a podcast host asking to be a guest", "expect": null, "note": "near miss: writing, but not a blog post"},
+  {"prompt": "Proofread this cover letter for typos", "expect": null, "note": "near miss: editing, but not AI tells or a post"},
+  {"prompt": "Write landing page copy for my SaaS pricing page", "expect": null, "note": "near miss: web copy, not a blog post"},
+  {"prompt": "Fix the broken image links in my WordPress theme", "expect": null, "note": "near miss: links, but a code task"},
+  {"prompt": "Write a tweet thread announcing my new blog post", "expect": null, "note": "near miss: about a post, but social copy"},
+  {"prompt": "Set up Google Analytics on my blog", "expect": null, "note": "near miss: blog setup, but analytics"}
 ]

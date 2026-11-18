@@ -152,7 +152,7 @@ if os.path.isfile(vpath):
 else:
     errors.append("VERSIONS.md missing")
 
-# Routing test cases must reference real skills.
+# Routing test cases must reference real skills (null = no skill should fire).
 rpath = os.path.join(ROOT, "tests", "routing-cases.json")
 if os.path.isfile(rpath):
     try:
@@ -163,7 +163,7 @@ if os.path.isfile(rpath):
             for k, case in enumerate(cases):
                 if "prompt" not in case or "expect" not in case:
                     errors.append(f"routing-cases[{k}]: missing 'prompt' or 'expect'")
-                elif case["expect"] not in skill_names:
+                elif case["expect"] is not None and case["expect"] not in skill_names:
                     errors.append(f"routing-cases[{k}]: expects unknown skill '{case['expect']}'")
     except Exception as e:
         errors.append(f"tests/routing-cases.json: invalid JSON ({e})")

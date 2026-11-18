@@ -2,7 +2,7 @@
 name: ai-seo
 description: "Edits a blog post so AI answer engines (ChatGPT search, Perplexity, Google AI Overviews and AI Mode, Gemini, Claude) can lift and cite it, and separates what helps from myths like llms.txt. Use when the user wants a post cited by AI, says 'AI SEO', 'AEO', 'GEO', or 'optimize for ChatGPT', or asks about llms.txt or AI Overviews. For keyword-focused on-page work, see seo-optimize. For an old post losing clicks to AI answers, see refresh."
 metadata:
-  version: 0.3.1
+  version: 0.4.0
 ---
 
 # AI SEO
@@ -88,9 +88,13 @@ Audit against these checks, then apply or propose each edit.
 6. Trust signals. A named author with relevant credentials, a visible publish or
    updated date, first-hand evidence (a test, a photo, original data), and links to
    primary sources.
-7. A summary block. One short "Key takeaways" list near the top helps skimmers and
-   gets quoted. Check the post doesn't already have one under another name (TL;DR,
-   Summary, At a glance) before adding it.
+7. One summary, not two. The answer-first opening from check 1 is the summary
+   engines quote. Add a separate "Key takeaways" list only to a long reference post
+   readers will scan, and then make sure the conclusion doesn't recap the same
+   points: a takeaways box plus a recap close is the shape readers and detectors
+   flag as generated (see evidence.md). An existing TL;DR, Summary, or At a glance
+   block stays only on a long reference post; otherwise move any fact only it holds
+   into the opening and remove it.
 8. FAQ. Add 3 to 5 questions only if readers still have real questions the body
    didn't answer. It's for readers and answer engines, not for rich results.
 9. Access. If you can read the site's `robots.txt`, confirm it doesn't block the
@@ -103,7 +107,7 @@ Audit against these checks, then apply or propose each edit.
    for `nosnippet`, a tiny `max-snippet`, or `data-nosnippet` on the answer. If you
    can't see these settings, ask the user to confirm them.
 
-One answer-first block and one takeaways list is the point. Don't stack summary boxes.
+One answer-first opening is the point. Don't stack summary boxes.
 
 ## Output
 
@@ -111,8 +115,8 @@ One answer-first block and one takeaways list is the point. Don't stack summary 
    it first in a few lines.
 2. A short audit: which of the nine checks the post fails, worst first.
 3. The edits, ready to paste, in this order: the answer-first opening, the takeaways
-   list, the rewritten section leads, the added sub-question coverage, and the FAQ if
-   it earned one.
+   list if the post earned one, the rewritten section leads, the added sub-question
+   coverage, and the FAQ if it earned one.
 4. Off-page steps, in two or three lines: where the brand should be mentioned or
    reviewed, a YouTube video if the topic suits one, and how to watch results. AI
    referrers (chatgpt.com, perplexity.ai, gemini.google.com, copilot.microsoft.com,

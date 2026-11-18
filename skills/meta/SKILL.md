@@ -2,7 +2,7 @@
 name: meta
 description: "Writes a post's search-facing metadata: meta title, meta description, URL slug, lead image tags, and a minimal Article JSON-LD. Use when the user asks for the meta, an SEO title, a slug or permalink, og:image, article schema, what shows in search results before the click, or Google Discover thumbnails. For on-page keyword work, see seo-optimize."
 metadata:
-  version: 0.4.0
+  version: 0.4.1
 ---
 
 # Meta
@@ -63,7 +63,7 @@ a compound word is fine.
   with the fact or benefit, work the keyword in naturally.
 - Permalink: 2 to 5 natural-language words, lowercase, hyphen-separated, readable as
   a phrase. No stop-word padding and no IDs. Strip years and numbers unless they are
-  genuinely part of the topic. Never change the slug of a published post unless the
+  part of the topic. Never change the slug of a published post unless the
   user asks; that needs a redirect.
 
 Show the character count beside the title and the description so the user can see

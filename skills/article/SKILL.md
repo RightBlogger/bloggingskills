@@ -2,7 +2,7 @@
 name: article
 description: "Writes a complete, publish-ready blog post from a topic or keyword, running research, outline, section-by-section drafting, a humanize pass, and meta. Use when the user says 'write a blog post', 'write an article about X', or 'draft a post on', or gives a topic and a target length. For a video or transcript, see youtube-to-blog. For a draft that already exists, see seo-optimize, refresh, or humanize."
 metadata:
-  version: 0.5.0
+  version: 0.6.0
 ---
 
 # Article
@@ -70,6 +70,9 @@ asked for a checkpoint, stop here and show the outline.
 
 ### 3. Draft section by section
 
+If the voice section or a voice profile has anchor lines or samples, reread them
+just before drafting; models imitate a sample far more closely than a description.
+Copy their moves (the rhythm, the opening shape, the stance), not the lines.
 Write sections in order and hold the running draft in mind so no point repeats.
 Open each section with its answer in one or two sentences that make sense out of
 context, then support it; that opening is what skimmers read and AI answers quote.
@@ -83,10 +86,11 @@ plausible invented anecdote is worse than none.
 
 ### 4. Humanize
 
-Run the rulebook's "Quick self-check before shipping" on the full draft and fix what
-it finds. Pay extra attention to the question-then-fragment pattern ("Want X? Do
-Y."), which long drafts accumulate; keep it to one per post. For a heavy rewrite,
-apply the humanize skill's method.
+Run the rulebook's "Quick self-check before shipping" once on the full draft and fix
+what it finds. Pay extra attention to the question-then-fragment pattern ("Want X?
+Do Y."), which long drafts accumulate; keep it to one per post. If the draft needs a
+heavy rewrite, apply the humanize skill's method instead of the self-check, not on
+top of it.
 
 ### 5. Optimize (light)
 

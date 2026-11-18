@@ -2,7 +2,7 @@
 name: internal-links
 description: "Adds internal links to a draft using only real URLs from a sitemap, a pasted list, or a links tool, never invented pages. Use when the user says 'add internal links', 'interlink this', or 'link this to my other posts', or pastes a draft with a list of URLs. For meta titles and descriptions, see meta. For a new post, see article."
 metadata:
-  version: 0.3.0
+  version: 0.3.1
 ---
 
 # Internal links
@@ -56,7 +56,7 @@ Work these in priority order. When two pull against each other, the higher one w
 1. Get the draft's word count to set the budget.
 2. Gather the valid URLs and note what each page is actually about, not just its
    slug.
-3. For each paragraph, ask whether one specific page would genuinely help the reader
+3. For each paragraph, ask whether one specific page would help the reader
    there. Skip paragraphs with no honest fit.
 4. Place the strongest matches up to the budget, spread across the piece. Drop
    anything weak; a thin link costs more trust than the click is worth.

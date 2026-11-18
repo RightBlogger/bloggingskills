@@ -74,7 +74,7 @@ flowchart LR
 
 Each skill's "Related skills" line has the full map.
 
-## Available skills (v0.5)
+## Available skills (v0.6)
 
 | Skill | What it does |
 |-------|--------------|

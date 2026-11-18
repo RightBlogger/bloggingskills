@@ -11,8 +11,8 @@ what to quote. That is why it matters.
 
 Contents: how to use this rulebook · hard rules · words and phrases · sentence-level
 tics · rhythm and paragraphs · tone tells · formatting tells · whole-piece tells ·
-titles · introductions · conclusions · FAQ · links · quick self-check before
-shipping.
+the tidy, self-announcing post · titles · introductions · conclusions · FAQ · links ·
+quick self-check before shipping.
 
 ## How to use this rulebook
 
@@ -27,9 +27,20 @@ in a row patronize the reader. One short fragment for emphasis is fine; a fragme
 in every paragraph is a fingerprint. Flag clusters and habits, not the occasional
 honest use.
 
-**Writing versus editing.** When you write new copy, avoid everything in this file.
-When you edit someone else's text, fix every hard-rule hit, fix frequency tells
-only where they repeat or stack, and leave the rest of the author's choices alone.
+**Shape outweighs words.** A post's structure (how it announces itself, how it ends,
+whether it says anything specific) gives it away more reliably than its vocabulary:
+detectors catch it, readers name it, and rewording leaves it intact. Fix the shape
+first; swapping a flagged word for a synonym fixes nothing.
+
+**Writing versus editing.** When you write new copy, write toward the positive
+defaults: a particular reader in mind, specific facts, plain words, a clear opinion.
+The hard rules apply while you draft; the rest of this file is the checklist you run
+on the draft, not a list of words to steer around sentence by sentence. When you
+edit someone else's text, fix every hard-rule hit, fix frequency tells only where
+they repeat or stack, and leave the rest of the author's choices alone.
+
+**One hit, one rule.** When a phrase breaks two rules, file it under the more
+serious one: a hard rule over a shape habit, a shape habit over a frequency tell.
 
 **The user's request outranks this file.** If the user explicitly asks for
 something a rule forbids, do what they asked. If that means invented material (a
@@ -38,10 +49,11 @@ mistaken for fact. A captured voice comes next.
 
 **A captured voice outranks both tiers.** If `.agents/blog-context.md` (or a
 `voice-<name>.md` profile from brand-voice) lists a habit as intentional, such as
-fragments, rhetorical questions, or a signature dash, keep it. A voice covers
-habits of style only; it never unlocks fabrication or chatbot residue. These rules
-target the reflexes no human reaches for unprompted. They are not a license to flatten
-every draft to the same surface.
+fragments, rhetorical questions, or a signature dash, keep it. A voice covers habits
+of style only; it never unlocks fabrication or chatbot residue. Imitate a voice's
+anchor lines, never reuse them: a quoted line turns into the same sentence in every
+post. These rules target the reflexes no human reaches for unprompted. They are not
+a license to flatten every draft to the same surface.
 
 ## Hard rules
 
@@ -66,8 +78,10 @@ every draft to the same surface.
    masterful, testament, digital age, fast-paced, ever-evolving. The literal sense
    is fine (an ecosystem in a biology post, landscape in a gardening post, leverage
    in a finance post). Otherwise use the word you'd say out loud.
-6. **No stock molds.** The title templates, intro openers, and signposted closers
-   listed under Titles, Introductions, and Conclusions below.
+6. **No stock molds.** The title templates and intro openers listed under Titles and
+   Introductions, the announced endings under Whole-piece tells ("In conclusion"),
+   and the first four habits of the tidy, self-announcing post ("In this post,
+   we'll cover," "Gone are the days").
 7. **No chatbot residue.** Lines that belong in a chat window, not a post: "Great
    question," "Certainly!", "I hope this helps," "Feel free to reach out," "As of my
    last update," "As an AI," and unfilled placeholders like "[insert example]."
@@ -90,7 +104,8 @@ every draft to the same surface.
 - Plain: "The dashboard is the team's source of truth."
 
 **Adverbs that inflate.** quietly, deeply, fundamentally, remarkably, arguably,
-truly, incredibly. They paint an ordinary statement as a profound one. Delete them,
+truly, incredibly, genuinely, honestly. They paint an ordinary statement as a
+profound one. Delete them,
 or prove the point.
 
 **Grand nouns for plain things.** "journey" for any process, "realm" for any area,
@@ -106,7 +121,7 @@ opportunity to grow." It sounds supportive and says nothing. State the concrete
 action.
 
 **Hedge stacks.** "may potentially," "could possibly," "it's important to note that,"
-"it can be argued that." One honest hedge where you are genuinely unsure is fine.
+"it can be argued that." One honest hedge where you are unsure is fine.
 Two in one sentence is fog.
 
 **Coined jargon.** Analytical-sounding compounds that were never defined: "the
@@ -160,9 +175,13 @@ dropped in for weight. Real people write in sentences; use them.
 Second, there's speed. Third, there's support." Either commit to a list or write
 connected prose.
 
-**Sentence length.** Keep most sentences under 20 words, averaging around 12 to 17,
-and let no more than a quarter run long. The variation itself (short, short, long,
-short) is what reads as human. Uniform length reads as generated.
+**Sentence length.** Write for someone reading on a phone between other things:
+most sentences should parse in one pass, and a long one is fine when its content
+needs the room. The variation itself (short, short, long, short) is what reads as
+human. Uniform length reads as generated, and so does a run of clipped five-word
+sentences. As a rough guide, most sentences land under about 20 words, averaging
+around 12 to 17, with no more than about a quarter running long. These are targets
+for the whole piece, not limits on any one sentence; a hard cap makes prose choppy.
 
 **Vary how sentences start.** Never open three in a row with the same word, and keep
 connector openers ("So," "However," "In addition," "As a result") to a handful per
@@ -171,11 +190,13 @@ post. Most sentences should start with their subject.
 - Varied: "The tool tracks spend. It flags overages automatically. You get an email
   the moment one hits."
 
-**Paragraph length.** One to three sentences, rarely four. A wall of text on a phone
-screen is where readers bail.
+**Paragraph length.** Mostly one to three sentences, rarely four, so a phone screen
+never shows a wall of text. Vary it: a run of identical three-sentence paragraphs is
+as much a pattern as a wall.
 
-**Reading level.** Aim for roughly 8th-to-9th-grade ease. Mostly active voice; keep
-passive under about 10 percent.
+**Reading level.** Aim for roughly 8th-to-9th-grade ease. Mostly active voice
+(passive under about 10 percent as a rough guide), and name the actor when it helps
+the reader.
 
 ## Tone tells
 
@@ -188,7 +209,7 @@ in." You're not running a seminar. Just say it.
 
 **Reach-y analogies.** "Think of it like a..." usually muddies more than it clears and
 defaults to teacher mode. Explain it plainly first; reach for the analogy only if it
-truly helps.
+helps.
 
 **"Imagine a world where..."** followed by a wishlist. Open with something real.
 
@@ -206,15 +227,30 @@ the claim the size of the evidence.
 **Concede-and-dismiss.** "While there are challenges, the upside is undeniable."
 Raising an objection only to wave it off. Engage it or leave it out.
 
+**No position.** Balancing every claim so the post never recommends anything. Readers
+came for a judgment. Where the evidence points one way, say which way and why.
+
+**Mannered prose.** Metaphor and flourish in place of a plain statement: "a dial worth
+turning" for "a parameter worth varying," "this point earns its keep" for "this point
+still matters," "the load-bearing assumption," "the through line," "sits at the
+intersection of." These phrases display the writer instead of carrying the idea, and
+they drag in connotations nobody chose. When a literal phrase exists, use it.
+
+**Compressed shorthand.** The opposite failure, which writers report from some newer
+models: dropped articles, undefined acronyms, references the reader can only decode
+three sentences later, a sentence that doesn't resolve until its last word. Write
+for a smart reader with no context: define a term before you use it, and put the
+point first.
+
 ## Formatting tells
 
-**Headings.** Use H2 and H3 (H4 only if truly needed), and never skip a level. Each
+**Headings.** Use H2 and H3 (H4 only if needed), and never skip a level. Each
 heading says what the reader gets in that section, so drop generic labels like
 "Introduction," "Overview," "Conclusion," or "Final thoughts." Keep emoji and
-decorative prefixes out. One summary block near the top may carry a plain
-label such as "Key takeaways." Number headings only when the numbers mean
-something: the steps of a how-to or the entries of a list post. Work keywords in
-only where they read naturally.
+decorative prefixes out. A summary block, when a long reference post earns one (see
+the tidy, self-announcing post), may carry a plain label such as "Key takeaways."
+Number headings only when the numbers mean something: the steps of a how-to or the
+entries of a list post. Work keywords in only where they read naturally.
 
 **Lists are the exception; prose is the default.** More than two or three lists in a
 post means you're leaning on them. Reserve lists for real sequences or
@@ -250,6 +286,41 @@ a giveaway of unedited long generation. Check for it before shipping.
 the topic. The cure is specifics only this piece has: a number, a named tool, a real
 example, a clear opinion.
 
+## The tidy, self-announcing post
+
+Model-written blog posts share one structure, and it survives any amount of word
+swapping. In a September 2026 study of 13,500 company blog posts (SlopShape,
+arXiv 2609.15369), a classifier reading structure alone, with every wording feature
+removed, scored 97 out of 100 at telling AI posts from human ones. The habits below
+had the widest gaps between the two.
+
+The first four carry no information, so fix them wherever they appear, like a hard
+rule. The last two are judgment calls: when you write, avoid them; when you edit,
+fix what you can without adding material, and flag the rest for the author.
+
+**Announcing the flow.** A roadmap paragraph that lists what's coming ("In this
+post, we'll cover X, Y, and Z"). Start on the substance; the headings show the
+route. A direct answer in the intro is not this; keep it.
+
+**A summary stage.** A "Key takeaways" box, a recap section, or a closing synthesis
+that repeats the body. A separate summary block belongs only on a long reference
+piece (roughly 2,000 words or more, or a page readers come back to look things
+up), and then keep the close from recapping too.
+
+**A close that recaps.** The conclusion repeats the opening or relists the body. End
+on something new: the next step, a caveat, a status, the last real point.
+
+**Old way versus new way.** Setting the topic against a legacy approach nobody in
+the post defends ("Gone are the days...", "Traditionally... but today"). Describe
+the thing on its own terms.
+
+**Nothing for the reader to do.** No link, tool, template, number, or step the
+reader can use. Give them one.
+
+**A confident, institutional voice throughout.** No aside, no admitted doubt, no
+register shift. Let the recorded voice show a person wrote it: a real opinion, an
+admitted limit, an aside the draft can support.
+
 ## Titles
 
 - Lead with the primary keyword and keep it under about 60 characters.
@@ -264,7 +335,8 @@ example, a clear opinion.
 
 ## Introductions
 
-- 3 to 5 sentences, under 150 words, in 2 or 3 short paragraphs. Never one dense block.
+- Short: roughly 3 to 5 sentences and under 150 words, in two or three brief
+  paragraphs. Never one dense block.
 - Hook, then context, then a turn into the body. Lead with the reader's problem and
   give the bottom line in the first few sentences, since many readers (and answer
   engines) take only the opening.
@@ -276,10 +348,10 @@ example, a clear opinion.
 
 - Its own H2, the last one, under a heading that says something. If the outline
   calls for a conclusion, write one; never drop it.
-- Make it substantive: the single biggest takeaway, a clear next step, or what the
-  reader can now do. Don't relist every point.
-- Tie back to the opening.
-- Add a CTA only if it genuinely fits. For an explainer or analysis, skip it.
+- Make it substantive: a clear next step, what the reader can now do, or the caveat
+  that matters most. Don't relist every point, and don't restate the opening (see
+  the tidy, self-announcing post above).
+- Add a CTA only if it fits. For an explainer or analysis, skip it.
 - Avoid the announced endings above; deliver the last thought directly.
 
 ## FAQ (optional)
@@ -305,14 +377,25 @@ example, a clear opinion.
 
 Run this on every draft. It takes a minute and catches most of the damage.
 
-1. Search the text for "—" (em dash), "–", "→", "serves as", "it's not",
-   "isn't just", "here's the", "let's dive", "in conclusion", "delve", "landscape",
-   "moreover", "furthermore", "studies show", "experts say", "**" at the start of a
-   list item. Fix every hard-rule hit. For the rest, fix repeats.
-2. Read any three sentences in a row out loud. Different opening words? Different
-   lengths?
-3. Check every number, name, quote, and claim of experience against your source
-   material. If you can't point to where it came from, it goes.
-4. Could a sentence sit unchanged in a competitor's post on the same topic? Sharpen it
+1. Read the first and last paragraphs together. If the close recaps, rewrite it to
+   end on something new; keep the conclusion itself. Cut a roadmap paragraph, and
+   cut a summary block unless it's the one a long reference post earned.
+2. Search the text for "—" (em dash), "–", "→", "serves as", "it's not",
+   "isn't just", "here's the", "let's dive", "in this post", "gone are the days",
+   "in conclusion", "key takeaways", "delve", "landscape", "moreover",
+   "furthermore", "studies show", "experts say", "**" at the start of a list item.
+   Fix every hard-rule hit and every "gone are the days" or "in this post" hit. For
+   the rest, fix repeats. A "key takeaways" hit is fine if it's the post's one
+   permitted summary.
+3. Read any three sentences in a row out loud. Different opening words? Different
+   lengths? Any metaphor where a plain phrase would do?
+4. Check every number, name, quote, and claim of experience against your source
+   material. If you can't point to where it came from, it goes. When you edit an
+   author's draft, their own stated facts count as source: keep them and flag any
+   worth checking.
+5. Could a sentence sit unchanged in a competitor's post on the same topic? Sharpen it
    or cut it.
-5. Did you make each point once, or dress the same one up five times?
+6. Did you make each point once, or dress the same one up five times?
+
+Run it once. A second pass hunting only for tells tends to make text worse: it
+removes the author's voice and replaces one pattern with another.

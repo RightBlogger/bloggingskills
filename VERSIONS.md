@@ -3,24 +3,76 @@
 The canonical version table. Each skill carries its own `metadata.version`. The repo
 version tracks the collection as a whole.
 
-Repo version: 0.5.0
+Repo version: 0.6.0
 
 | Skill | Version |
 |-------|---------|
 | blog-context | 0.2.1 |
-| brand-voice | 0.2.1 |
-| house-style | 0.3.0 |
+| brand-voice | 0.3.0 |
+| house-style | 0.4.0 |
 | content-plan | 0.2.1 |
 | keyword-research | 0.4.0 |
-| serp-analysis | 0.4.0 |
-| article | 0.5.0 |
-| humanize | 0.3.0 |
-| seo-optimize | 0.3.0 |
-| refresh | 0.3.1 |
-| internal-links | 0.3.0 |
-| meta | 0.4.0 |
-| ai-seo | 0.3.1 |
-| youtube-to-blog | 0.4.0 |
+| serp-analysis | 0.4.1 |
+| article | 0.6.0 |
+| humanize | 0.4.0 |
+| seo-optimize | 0.3.1 |
+| refresh | 0.3.2 |
+| internal-links | 0.3.1 |
+| meta | 0.4.1 |
+| ai-seo | 0.4.0 |
+| youtube-to-blog | 0.4.1 |
+
+## 0.6.0
+
+Built from a November 2026 research pass: Anthropic's Fable 5.1, 5.2, and Opus 5.5
+prompting guides, OpenAI's GPT-6 skills guidance, the SlopShape study of AI blog
+structure, and what writers on Reddit and X report actually works.
+
+- Rulebook: a new "tidy, self-announcing post" section. In a 2026 study, a
+  classifier reading structure alone told AI blog posts from human ones with a
+  detection score of 97 out of 100, and rewording barely moved it. The rulebook now
+  names the shape and splits it in two: a roadmap paragraph, a duplicate summary
+  block, a recap close, and old-way-versus-new framing get fixed wherever they
+  appear; nothing for the reader to do and a voice with no person in it are
+  judgment calls. A direct answer in the intro is explicitly kept. Conclusions no
+  longer "tie back to the opening"; they end on something new.
+- Rulebook: new tells for current models: mannered prose (Anthropic's term, "a dial
+  worth turning"), compressed shorthand, no position, and "genuinely" and
+  "honestly" as inflating adverbs. The self-check now starts by reading the first and
+  last paragraphs together, and says to run once, since a second tells-only pass
+  tends to make text worse.
+- Rulebook: sentence, paragraph, and intro rules lead with the target (a phone
+  reader, varied rhythm) and keep the numbers as rough guides for the whole piece,
+  not caps on each sentence, because current models follow style rules literally
+  and caps make prose choppy. Drafting writes toward positive defaults and uses the
+  lists as a checklist.
+- `humanize`: a new "Shape" step cuts the roadmap paragraph and duplicate summaries,
+  rewrites a recap close while keeping the conclusion, and flags what needs the
+  author's material. Facts the author wrote stay and get flagged for checking (only
+  vague authority and unclaimed experience are cut), a self-contradicting draft keeps
+  the body's number and flags the conflict, and it stops after one pass.
+- `ai-seo`: the answer-first opening is the summary. A separate "Key takeaways" list
+  is now only for long reference posts (roughly 2,000 words or more), never alongside
+  a recap close, and an existing one on a short post gets folded into the opening. Evidence adds
+  the SlopShape numbers, Gemini 4 Hydrogen in AI Mode, a reported November Search
+  Console logging gap (secondary source), and Google's planned AI-training robots
+  token.
+- `brand-voice`: asks for varied samples, since models copy whatever samples share,
+  takes anchor lines from different samples, skips anchors that only work because
+  of a fact about the author, and notes per trait which mode (post, email, social)
+  it belongs to. The rulebook says to imitate anchor lines, never reuse them.
+- `article`: rereads the voice's anchor lines right before drafting, and runs the
+  self-check once or humanize's method, not both.
+- `house-style`: audits whole-piece shape, not only lines. The audit table gains
+  shape tiers, orders by damage, and lists facts that contradict each other.
+- `refresh`: Google update list adds the November 2026 core update, the Hydrogen
+  switch, and the October AI-content guidance change.
+- Skills follow their own rulebook: intensifiers like "genuinely" and "truly" removed
+  (patch bumps for internal-links, meta, seo-optimize, and serp-analysis;
+  youtube-to-blog picks up article's drafting changes).
+- Tests: six near-miss routing cases where no skill should fire (`"expect": null`).
+- AGENTS.md adds three authoring rules: targets over numeric limits, samples over
+  adjectives, shape before words.
 
 ## 0.5.0
 

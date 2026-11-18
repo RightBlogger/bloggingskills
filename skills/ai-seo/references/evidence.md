@@ -1,6 +1,6 @@
 # Evidence behind the ai-seo checks
 
-Collected October 2026. AI search changes fast, so treat every number here as a
+Collected October 2026, updated November 2026. AI search changes fast, so treat every number here as a
 snapshot and re-check the source before quoting it to a client. Studies show
 correlation, not cause.
 
@@ -62,6 +62,27 @@ correlation, not cause.
   Facebook (10.1%), Quora (4.7%), and Wikipedia (4.0%). Off-page presence on these
   platforms is part of AI visibility.
   Source: ahrefs.com/blog/most-cited-domains-ai-overviews (2026-09-02).
+- Gemini 4 Hydrogen became the default model in AI Mode on 2026-11-12 and answers
+  the hardest AI Overview questions. Google says its improved query fan-out links to
+  "a broader range of helpful links than before," with no figures. Citation data
+  from November spans this switch and the core update that began 2026-11-10.
+  Source: blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade.
+
+## Summaries and the AI shape
+
+- Semrush found clear summaries among the traits most associated with citation
+  (above). A separate 2026 study found the same habit marks a post as generated:
+  across 2,250 human and 11,250 AI company blog posts, 88% of AI posts had a summary
+  or synthesis stage against 27% of human ones, 77% closed by restating the opening
+  (12% human), and 93% announced the thesis before the first section (51% human).
+  Structure alone separated AI from human posts at 97.0 macro-F1, and 96.1 after
+  each model reworded its own posts. These are a classifier's results, not a reader
+  study, and the study counts any thesis stated before the first section, so a
+  direct answer in the intro is part of the pattern too. The practical reading: keep
+  the one answer-first opening that citation needs, and drop the roadmap paragraph,
+  the takeaways box, and the recap close that pile on top of it.
+  Sources: arxiv.org/abs/2609.15369 (SlopShape, September 2026);
+  sitefire.ai/blog/how-to-tell-ai-slop-from-human-writing (2026-09-04).
 
 ## What it does to clicks
 
@@ -84,12 +105,20 @@ correlation, not cause.
   training crawler. Source: developers.openai.com/docs/bots.
 - Claude-SearchBot and Claude-User are separate from the ClaudeBot training crawler.
   Source: support.claude.com/en/articles/8896518.
+- Google plans to honor a shared robots.txt policy token for AI training
+  preferences, based on an IETF draft, starting in 2027. Nothing to deploy yet.
+  Source: developers.google.com/search/updates (2026-10-30), as summarized at
+  younusfardeen.in (secondary).
 
 ## Measuring it
 
 - Search Console's generative AI performance reports (Search and Discover) show
   impressions, pages, countries, and devices, but no clicks. Global since
   2026-08-31. Source: developers.google.com/search/blog/2026/06/gen-ai-performance-reports.
+  A logging error reportedly under-counted these impressions on 2026-11-09 to 11
+  (and on 2026-08-13 to 17, later restored), so don't read a dip on those days as a
+  loss. Source: mojodojo.io/blog/gemini-4-hydrogen-default-ai-mode (secondary;
+  confirm against Search Console's own annotations).
 - Bing Webmaster Tools has an AI Performance report with Copilot citations and
   grounding queries, also without clicks (public preview, 2026-02).
   Source: searchinfluence.com/blog/bing-ai-performance-report-copilot-citations

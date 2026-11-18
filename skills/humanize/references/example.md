@@ -32,7 +32,7 @@ What's wrong, in order of damage:
   full potential").
 - Signposted conclusion and a banned noun ("In conclusion", "game-changer").
 
-Because most sentences are tells, this is a Scope case (Method step 5): rewrite from the
+Because most sentences are tells, this is a Scope case (Method step 6): rewrite from the
 argument, don't patch sentence by sentence. The argument is small and true: teams lose
 time to tool sprawl, and consolidating onto one platform helps.
 
